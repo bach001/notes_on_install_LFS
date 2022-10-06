@@ -1,0 +1,43 @@
+
+----------------------------------------------------------------------------------------------------------------
+
+
+# Mesa dependencies  ->  https://www.mesa3d.org/
+
+# install following this guide https://www.linuxfromscratch.org/blfs/view/svn/x/mesa.html
+
+========================================================================================
+
+caveat ##  There is a cicular dependency
+
+# using the newest version https://mesa.freedesktop.org/archive/mesa-22.2.0.tar.xz
+
+update dependencies #  libdrm-2.4.113, and Mako-1.2.3
+
+========================================================================================
+
+
+libva-2.15.0 (to provide VA-API support for some gallium drivers, note that there is a **circular dependency**. 
+You must build libva first without EGL and GLX support, install this package, and rebuild libva), 
+
+libvdpau-1.5 (to build VDPAU drivers), 
+
+LLVM-14.0.6 (required for Gallium3D, nouveau, and radeonsi drivers and for swrast, 
+the software rasterizer which is sometimes referred to as llvmpipe. 
+See https://docs.mesa3d.org/systems.html for more information), 
+
+and wayland-protocols-1.26 (required for Plasma-5.25.4, GNOME, and recommended for GTK+-3.24.34)
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+# Installation of libva
+
+[Caution] Caution
+
+If you are reinstalling this package, you will need to remove the older versions of the libraries. 
+These are in the form of libva*.so.1 and any symbolic links pointing to them. In addition, 
+any packages that use these files need to be rebuilt.
+
+----------------------------------------------------------------------------------------------------------------
