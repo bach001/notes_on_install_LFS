@@ -1,0 +1,98 @@
+
+---------------------------------------------------------------------------------------------------------------
+
+
+#  https://bbs.archlinux.org/viewtopic.php?id=272455
+
+i965 is a Mesa driver and i915 is a kernel driver. Both are needed and they are not interchangeable.
+
+See also https://blogs.igalia.com/itoral/2014/07 … ics-stack/
+
+EDIT: for recent Intel graphics hardware the Iris driver is preferred over i965. See the ArchWiki for more on this.
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+# beyond lfs -> mesa
+
+Mesa is updated relatively often. You may want to use the latest available 22.1.x mesa version.
+
+
+# beyond lfs -> wayland
+
+Wayland is a project to define a protocol for a compositor to talk to its clients 
+as well as a library implementation of the protocol.
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+# beyond lfs -> Introduction to libva
+
+
+The libva package contains a library which provides access to hardware accelerated video processing, 
+using hardware to accelerate video processing in order to offload the central processing unit (CPU) 
+to decode and encode compressed digital video. The VA API video decode/encode interface is platform and 
+window system independent targeted at Direct Rendering Infrastructure (DRI) in the X Window System however 
+it can potentially also be used with direct framebuffer and graphics sub-systems for video output. 
+Accelerated processing includes support for video decoding, video encoding, subpicture blending, and rendering.
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+# The Mesa 3D Graphics Library
+
+Open source implementations of OpenGL, OpenGL ES, Vulkan, OpenCL, and more!
+
+
+# OpenGL
+
+OpenGL is a cross-platform, industry standard graphics programming API for 3D graphics.
+
+
+# OpenGL ES
+
+OpenGL ES is the mobile subset of OpenGL. 
+It's supported on all major mobile platforms, and is also the base for WebGL.
+
+
+# Vulkan
+
+Vulkan is the next-generation graphics programming API from The Khronos® Group.
+
+
+# EGL
+
+EGL is an interface between Khronos rendering APIs such as OpenGL 
+or OpenVG and the underlying native platform window system.
+
+
+# OpenMAX
+
+OpenMAX is a non-proprietary and royalty-free cross-platform set of C-language programming interfaces, 
+provides abstractions for processing of audio, video, and still images.
+
+
+# OpenCL
+
+OpenCL is a framework for writing programs that execute across heterogeneous 
+platforms consisting of CPUs, GPUs, DSPs, FPGAs and other processors or hardware accelerators.
+
+
+# VDPAU
+
+VDPAU is the Video Decode and Presentation API for UNIX. 
+It provides an interface to video decode acceleration and presentation hardware present in modern GPUs.
+
+
+# VA-API
+
+VA-API is an open-source library and API specification, which provides access to 
+graphics hardware acceleration capabilities for video processing.
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
