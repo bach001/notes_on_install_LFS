@@ -1,17 +1,16 @@
 
-
 ---------------------------------------------------------------------------------------------
-
 
 # reference
 
 https://wiki.archlinux.org/title/sway
 
-
 ---------------------------------------------------------------------------------------------
 
-
 # dependencies build
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
 
 ## https://github.com/KhronosGroup/glslang
 
@@ -69,7 +68,7 @@ meson install
 ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
 
-# wlroots https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.1/downloads/wlroots-0.15.1.tar.gz
+## wlroots https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.1/downloads/wlroots-0.15.1.tar.gz
 
 
 meson setup build && cd build
@@ -114,40 +113,12 @@ edit this file sway/commands/output/background.c to reflect the new update from 
 			}
       
       
-      snprintf(real_src, strlen(conf_path) + strlen(src) + 2, "%s/%s", conf_path, src);
+                        snprintf(real_src, strlen(conf_path) + strlen(src) + 2, "%s/%s", conf_path, src);
 			free(src);
 			free(conf);
 			src = real_src;
 
 fix2  https://github.com/swaywm/sway/pull/6783/files
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---------------------------------------------------------------------------------------------
 
