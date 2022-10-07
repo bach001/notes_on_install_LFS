@@ -1,0 +1,17 @@
+
+install following this guide 
+
+https://www.linuxfromscratch.org/blfs/view/8.0-systemd/general/weston.html
+
+
+
+fix  edit libweston/weston-launch.c
+
+for details refer to https://bugs.gentoo.org/610652
+
+
+another reference might be useful
+
+https://wayland.freedesktop.org/building.html
+
+
