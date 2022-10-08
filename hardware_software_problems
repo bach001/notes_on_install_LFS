@@ -38,6 +38,13 @@
 
 #7 Install Noto Sans CJK fonts for CJK to show properly
 
+   adjust those commands
+
+   install -v -d -m755 /usr/share/fonts/dejavu &&
+   install -v -m644 ttf/*.ttf /usr/share/fonts/dejavu &&
+   fc-cache -v /usr/share/fonts/dejavu
+
+
 #8 When in console setfont with Terminus font such as term-v32b.psf makes eyes happy
 
 #9 Using xrandr to project or close screens
