@@ -9,7 +9,16 @@ fix  edit libweston/weston-launch.c
 
 for details refer to https://bugs.gentoo.org/610652
 
+weston-launch patch for major/minor
 
+
+According to NEWS if glibc-2.25:
+* The inclusion of <sys/sysmacros.h> by <sys/types.h> is deprecated.  This
+  means that in a future release, the macros “major”, “minor”, and “makedev”
+  will only be available from <sys/sysmacros.h>
+  
+  
+  
 another reference might be useful
 
 https://wayland.freedesktop.org/building.html
