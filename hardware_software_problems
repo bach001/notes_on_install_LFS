@@ -42,3 +42,7 @@
 
 #9 Using xrandr to project or close screens
 
+#10 Wireless USB mouse may work not properly when changing from one kernel to another
+    
+    just unplug and replug it making udev event handling function properly
+    
