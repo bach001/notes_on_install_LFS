@@ -1,0 +1,26 @@
+
+# run from console error: Could not get primary session for user no data available
+
+  googling online but to no avail, Just dive into the source code, 
+  
+  it shows that sway will try to find a XDG_SESSION_ID env
+  
+  variable to find the user session info but get no result. 
+  
+  The analysis is that there's somethingwrong with elogind; 
+  
+  Shadow package needs to be reinstalled after installing after installing Linux PAM package and
+  
+  be properyly configured.
+  
+
+Error fix: reinstalling shadow package resulting in `su -` failure.
+
+  reboot with a bootable image, mount the file system, install and configure in chroot env.
+  
+  
+# Bonus: eloginctl can be used to suspend the system.
+
+# Properly configured elogind will manage usering login session correctly, and XDG* variables
+
+  all get automatically set
