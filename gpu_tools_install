@@ -1,6 +1,10 @@
 
 
-# Procps vs Procps-ng
+# install intel-gpu-tools
+
+## Procps vs Procps-ng
+
+from https://lists.archlinux.org/pipermail/arch-dev-public/2012-April/022845.html
 
 The procps project didn't had any new release for a while and the
 current package use a dozen of patches to fix miscellenaous things.
@@ -9,4 +13,29 @@ procps by Debian, Fedora and openSUSE.  Gentoo is also using procps-ng
 (although, like Debian, the package is still named procps).
 
 
+## install libunwind
+
+https://download.savannah.nongnu.org/releases/libunwind/libunwind-1.6.2.tar.gz
+https://www.linuxfromscratch.org/blfs/view/svn/general/libunwind.html
+
+## intall 8.72. Procps-ng-4.0.0 
+
+https://www.linuxfromscratch.org/lfs/view/stable/chapter08/procps-ng.html
+
+##  install [procps_3.3.15.orig.tar.xz] 
+
+https://packages.debian.org/buster/libprocps-dev
+
+## install libdw from Elfutils-0.187 
+
+https://www.linuxfromscratch.org/lfs/view/stable/chapter08/libelf.html
+
+
+fix lib/meson.build
+
+line 155 name = f.underscorify(f) -> name = f.underscorify()
+
+
+ 
+ 
 
