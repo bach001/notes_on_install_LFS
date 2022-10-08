@@ -1,0 +1,22 @@
+
+# Chromium run error
+
+FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel 
+
+
+do the following
+
+https://chromium.googlesource.com/chromium/src/+/master/docs/linux/suid_sandbox_development.md
+
+sudo chown root:root chrome_sandbox && sudo chmod 4755 chrome_sandbox && \
+    export CHROME_DEVEL_SANDBOX="$PWD/chrome_sandbox"
+./chrome
+
+
+
+# chrome play video with no sound
+
+  dmesg shows Linux kernel probe codecs with no result
+  
+  recompile kernel with various codecs options checked
+
