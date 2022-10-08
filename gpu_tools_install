@@ -31,13 +31,21 @@ https://packages.debian.org/buster/libprocps-dev
 https://www.linuxfromscratch.org/lfs/view/stable/chapter08/libelf.html
 
 
-fix lib/meson.build
+##fix lib/meson.build
 
 line 155 name = f.underscorify(f) -> name = f.underscorify()
 
+
+
+
+# install https://gitlab.freedesktop.org/vdpau/vdpauinfo/-/archive/1.5/vdpauinfo-1.5.tar.bz2
+
+install https://gitlab.freedesktop.org/vdpau/vdpauinfo
+
+
  
 
-Firefox's performance settings
+# Firefox's performance settings
 
 Firefox automatically uses settings that work best with your computer. 
 You can modify these settings in your Firefox Settings page:
