@@ -1,0 +1,19 @@
+
+
+
+wget https://download.videolan.org/vlc/3.0.17.4/vlc-3.0.17.4.tar.xz
+
+wget http://liba52.sourceforge.net/files/a52dec-0.7.4.tar.gz
+
+wget https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2
+wget https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.45.tar.bz2
+
+
+wget https://downloads.sourceforge.net/mad/libmad-0.15.1b.tar.gz
+wget https://www.linuxfromscratch.org/patches/blfs/11.2/libmad-0.15.1b-fixes-1.patch
+
+
+wget https://www.lua.org/ftp/lua-5.2.4.tar.gz
+wget https://www.linuxfromscratch.org/patches/blfs/11.2/lua-5.2.4-shared_library-1.patch
+
+
