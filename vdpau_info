@@ -1,0 +1,19 @@
+
+# hardware API
+
+https://wiki.debian.org/HardwareVideoAcceleration
+
+
+APIs and Hardware / Software Support
+The three main APIs that are in use are VA-API, VDPAU, and NVENC/NVDEC.
+
+VA-API - Supported on Intel, AMD, and NVIDIA (only via the open-source Nouveau drivers). Widely supported by software, including Kodi, VLC, MPV, Chromium, and Firefox. Main limitation is lacking any support in the proprietary NVIDIA drivers.
+
+VDPAU - Supported fully on AMD and NVIDIA (both proprietary and Nouveau). Supported by most desktop applications like Kodi, VLC, and MPV, but has no support at all in Chromium or Firefox. Main limitations are poor and incomplete Intel support and not working with browsers for web video acceleration.
+NVENC/NVDEC - A proprietary API supported exclusively by NVIDIA. Only supported in a few major applications (FFmpeg and OBS Studio for encoding, FFmpeg and MPV for decoding). Main limitation is limited software and hardware support across the board because of its proprietary nature.
+
+
+# https://www.reddit.com/r/linux4noobs/comments/bt5v2b/mplayer_and_intel_graphics_problem_failed_to_open/
+
+Intel doesn't support VDPAU, that is an Nvidia thing. I don't think the standard mplayer supports vaapi that Intel and AMD support. You would have to go to software rendering if you must keep mplayer.
+
