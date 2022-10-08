@@ -1,0 +1,7 @@
+
+
+# Issue `make mrproper` command before recompiling kernel.
+
+
+# after disk repartition, /etc/fstab needs to be edited
+
