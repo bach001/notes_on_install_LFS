@@ -35,7 +35,20 @@ fix lib/meson.build
 
 line 155 name = f.underscorify(f) -> name = f.underscorify()
 
-
  
+
+Firefox's performance settings
+
+Firefox automatically uses settings that work best with your computer. 
+You can modify these settings in your Firefox Settings page:
+
+Click the menu button Fx89menuButton and select Settings.
+
+In the General panel, go down to the Performance section.
+
+Uncheck the box next to Use recommended performance settings.
+
+
+
  
 
