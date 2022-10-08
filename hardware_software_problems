@@ -1,0 +1,44 @@
+
+
+ #1 Qualcomm Atheros QCA9377 802.11ac requires firmware board-2.bin firmware-6.bin to work
+ 
+   Linux kernel 5.19.2 has a way of specifying a list of firmware to be built into
+   
+   loading from user space is also possible with legacy capabilities enabled but it
+   
+   seems that it doesn't work well cause it's loading too long after system has booted up
+   
+
+#2 UHD Graphics 620 requres firmware kbl_dmc_ver1_04.bin to be installed
+   same as #1 build it into kernel
+   
+#3 Sound card detected, but works with no sound
+   
+   dmesg shows codecs can't be found
+   
+   rebuid kernel with various codecs options checked
+   
+#4 Issue `make mrproper` command if you rebuild kernel, forgetting to do this everything might happen,
+   
+   for instance, kernel panic.
+
+
+#5 Firefox can't play some videos and music. Install various dependencies as specified in
+
+   https://www.linuxfromscratch.org/blfs/view/stable/xsoft/firefox.html
+   
+   mp3 mp4 requires FFmpeg-5.1 to be installed
+   
+#6 Chromium requires lots of dependencies to be installed, install it one by one with patience.
+
+   fix sandbox error with the following command
+   
+   sudo chown root:root chrome_sandbox && sudo chmod 4755 chrome_sandbox && \
+      export CHROME_DEVEL_SANDBOX="$PWD/chrome_sandbox"
+
+#7 Install Noto Sans CJK fonts for CJK to show properly
+
+#8 When in console setfont with Terminus font such as term-v32b.psf makes eyes happy
+
+#9 Using xrandr to project or close screens
+
