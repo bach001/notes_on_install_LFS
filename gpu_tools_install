@@ -1,0 +1,12 @@
+
+
+# Procps vs Procps-ng
+
+The procps project didn't had any new release for a while and the
+current package use a dozen of patches to fix miscellenaous things.
+I'm thinking about switching to procps-ng[1]. Procps-ng is a fork of
+procps by Debian, Fedora and openSUSE.  Gentoo is also using procps-ng
+(although, like Debian, the package is still named procps).
+
+
+
