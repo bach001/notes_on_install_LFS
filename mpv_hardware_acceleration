@@ -1,3 +1,12 @@
+
+# test mpv hardware acceleration capabilities using the following command
+
+mpv --hwdec=yes --log-file=mpv.log --msg-level=vd=v,vo=v,vo/gpu/vaapi-egl=trace *.mp4
+
+
+# the log record shows mpv works very well
+
+
 [   0.013][v][cplayer] mpv 0.34.0-503-g3f32dfe981 Copyright © 2000-2022 mpv/MPlayer/mplayer2 projects
 [   0.013][v][cplayer]  built on Sun Oct 09 07:39:02 2022
 [   0.013][v][cplayer] FFmpeg library versions:
