@@ -1,0 +1,102 @@
+
+# firefox setting
+
+##1  https://wiki.archlinux.org/title/Hardware_video_acceleration
+
+You can override the driver for VA-API by using the LIBVA_DRIVER_NAME environment variable:
+
+Intel graphics:
+
+For libva-intel-driver use i965.
+For intel-media-driver use iHD.
+
+
+##2 https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
+
+
+More recent versions of Firefox support opting into Wayland mode via an environment variable.
+
+$ MOZ_ENABLE_WAYLAND=1 firefox
+
+Set media.ffmpeg.vaapi.enabled to true in about:config
+
+
+##3 console logs and intel_gpu_top show it works
+
+libva info: VA-API version 1.15.0
+libva info: User environment variable requested driver 'i965'
+libva info: Trying to open /usr/X11/lib/dri/i965_drv_video.so
+libva info: Found init function __vaDriverInit_1_15
+libva info: va_openDriver() returns 0
+
+
+intel-gpu-top: Intel Kabylake (Gen9) @ /dev/dri/card0 -   83/  84 MHz;  89% RC6;  0.07/ 1.57 W
+        139 irqs/s
+
+      IMC reads:      815 MiB/s
+     IMC writes:      125 MiB/s
+
+         ENGINES     BUSY                                                      MI_SEMA MI_WAIT
+       Render/3D    0.59% |▍                                                 |      0%      0%
+         Blitter    0.00% |                                                  |      0%      0%
+           Video    3.40% |█▊                                                |      0%      0%
+    VideoEnhance    0.00% |                                                  |      0%      0%
+    
+    
+    
+
+# this guideline is very informative and comprehensive
+
+https://wiki.archlinux.org/title/Hardware_video_acceleration
+
+
+
+# useful information about VAAPI VDPAU https://bbs.archlinux.org/viewtopic.php?id=172098
+
+**Intermeidate driver might expose VDPAU interface to application using VAAPI driver as backend**
+
+
+donniezazen wrote:
+VAAPI is the native protocol for Intel graphic cards and VDPAU is for Nvidia.
+
+------------------------------------------------------------------------------------------------------------
+
+Incorrect. They are both, as I said, APIs. Any driver can implement either of them. Intel implements VAAPI, but the open source radeon and nouveau drivers implement VDPAU. The proprietary Nvidia driver implements VDPAU too.
+
+But there's nothing (except developer interest) preventing Intel from implementing VDPAU, or radeon/nouveau from implementing VAAPI. It's a developer choice, nothing more.
+
+------------------------------------------------------------------------------------------------------------
+
+
+donniezazen wrote:
+VAAPI requires libva-intel-driver and libva-vdpau-driver for Intel and Nvidia respectively.
+
+------------------------------------------------------------------------------------------------------------
+
+Not quite. libva-intel-driver is indeed for Intel. But libva-vdpau-driver is a wrapper - when VLC used to be VAAPI only, libva-vdpau-driver allowed you to get hardware acceleration in it with the Nvidia proprietary driver. Nowadays VLC supports both VAAPI and VDPAU, so libva-vdpau-driver isn't needed anymore.
+
+------------------------------------------------------------------------------------------------------------
+
+
+donniezazen wrote:
+VDPAU requires libvdpau-va-gl/libva-intel-driver and nvidia-utils for Intel and Nvidia respectively.
+
+------------------------------------------------------------------------------------------------------------
+
+Again, not quite. libvdpau-va-gl is a wrapper, required only if you want to use Intel with applications that support VDPAU only, like flash or mplayer. VLC and mpv support VAAPI, so libvdpau-va-gl isn't needed with them.
+
+------------------------------------------------------------------------------------------------------------
+
+
+donniezazen wrote:
+I am wondering if I should install all those packages and set VLC to automatic and let it appropriately choose. I have Optimus laptop but 90% time I use Intel card.
+
+------------------------------------------------------------------------------------------------------------
+
+All you need for Intel with VLC is libva-intel-driver, nothing else. You can also install libvdpau-va-gl to use Intel with flash.
+
+I'd keep the Nvidia card deactivated for video decoding, no sense using extra power when Intel can do it. The only advantage Nvidia has is advanced deinterlacing.
+
+------------------------------------------------------------------------------------------------------------
+
+
