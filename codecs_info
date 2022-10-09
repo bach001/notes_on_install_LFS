@@ -1,6 +1,5 @@
 
-
-----------------------------------------------------------------------------------
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
 
 A confusing name VdaVideoDecoder from chrome://media-internals/
@@ -13,7 +12,7 @@ public VideoDecoder,. public VideoDecodeAccelerator::Client,.
 
 
 
-----------------------------------------------------------------------------------
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
 
 What is the AV1 codec?
@@ -24,7 +23,7 @@ with H.265/HEVC. AV1 can provide 30% bandwidth savings compared to VP9 and HEVC
 and drastically improves visual quality at equivalent bitrates.
 
 
-----------------------------------------------------------------------------------
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
 
 VC-1 is an evolution of the conventional video codec design that is based on 
@@ -35,7 +34,7 @@ VC-1 is an alternative to the MPEG-4 AVC (H. 264) video codec standard.
 further reading: https://en.wikipedia.org/wiki/VC-1
 
 
-----------------------------------------------------------------------------------
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
 
 Is royalty-free really free?
@@ -50,7 +49,9 @@ Royalty-free is not free of terms or restrictions – The license terms are to b
 in order to make legal use of the stock images under this contract.
 
 
-----------------------------------------------------------------------------------
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
-https://www.brid.tv/best-video-codecs-to-use-and-how-to-choose-the-right-one/
+further reading: https://www.brid.tv/best-video-codecs-to-use-and-how-to-choose-the-right-one/
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
