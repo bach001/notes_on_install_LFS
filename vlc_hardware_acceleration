@@ -1,0 +1,14 @@
+
+VLC 3.0.x hardware acceleration is broken
+
+https://www.linuxfromscratch.org/blfs/view/stable/multimedia/vlc.html
+
+--disable-libva: This switch is required to disable video acceleration in VLC 
+since it is incompatible with ffmpeg-5, and upstream has no plans to port it due to complexity.
+
+
+
+[VLC3] Support FFmpeg 5.0 (except for VAAPI)
+
+https://code.videolan.org/videolan/vlc/-/merge_requests/1245
+
