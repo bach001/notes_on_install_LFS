@@ -1,4 +1,6 @@
 
+# build mpv following this guide https://github.com/mpv-player/mpv-build
+
 # test mpv hardware acceleration capabilities using the following command
 
 mpv --hwdec=yes --log-file=mpv.log --msg-level=vd=v,vo=v,vo/gpu/vaapi-egl=trace *.mp4
