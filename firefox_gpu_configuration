@@ -1,7 +1,9 @@
 
 # firefox setting
 
-##1  https://wiki.archlinux.org/title/Hardware_video_acceleration
+##1  Add a line in .bashrc: export LIBVA_DRIVER_NAME=i965
+
+https://wiki.archlinux.org/title/Hardware_video_acceleration
 
 You can override the driver for VA-API by using the LIBVA_DRIVER_NAME environment variable:
 
@@ -11,15 +13,38 @@ For libva-intel-driver use i965.
 For intel-media-driver use iHD.
 
 
-##2 https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
 
+in about:config
+
+media.ffmpeg.vaapi.enabled to true. 
+
+Enables the feature.
+
+
+media.ffvpx.enabled to false. 
+
+Disables the internal software decoders for VP8/VP9, which currently overrule hardware accelerated video.
+
+further reading: https://hg.mozilla.org/mozilla-central/file/tip/media/ffvpx/README_MOZILLA
+
+
+media.rdd-vpx.enabled to false. 
+
+Needed due to Firefox trying to put some video decoding in a remote video process 114. 
+This currently breaks accelerated VP8/VP9 video decoding.
+
+
+media.navigator.mediadatadecoder_vpx_enabled to true. 
+
+Enables hardware decoding for WebRTC, which is used on web based video conferencing apps.
+
+
+#22 run firefox like this MOZ_ENABLE_WAYLAND=1 firefox
+
+https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
 
 More recent versions of Firefox support opting into Wayland mode via an environment variable.
-
-$ MOZ_ENABLE_WAYLAND=1 firefox
-
-Set media.ffmpeg.vaapi.enabled to true in about:config
-
+ 
 
 ##3 console logs and intel_gpu_top show it works
 
