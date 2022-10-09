@@ -1,7 +1,15 @@
 
+# Follow these 2 links
+
+https://wiki.archlinux.org/title/Hardware_video_acceleration#Configuring_applications
+https://wiki.archlinux.org/title/Chromium#Hardware_video_acceleration
+
+
 # Chrome's support from hardware acceleration
 
 Xorg only. Wayland is not supported. XWayland exhibits choppiness FS#67035.
+
+## this means xwayland is supported, but with issues.
 
 
 # read this page and follow the guide
@@ -26,36 +34,36 @@ Install the correct VA-API driver for your video card and verify VA-API has been
 and working correctly, see Hardware video acceleration. For proprietary NVIDIA support, 
 installing libva-vdpau-driver-chromiumAUR or libva-vdpau-driver-vp9-git AUR is required.
 
-# this one is done
+## this one is done
 
 
 Set the option --enable-features=VaapiVideoDecoder. This is enough when using ANGLE GL 
 renderer and libva-intel-driver.
 
-# this one is done
+## this one is done
 
 
 When using ANGLE, Chromium forces the older i965 driver and fails when intel-media-driver 
 is used. As a workaround, configure VA-API manually. See [5] for details.
 
-# this one is done
+## this one is done
 
 
 To use the system GL renderer on Xorg, use either --use-gl=egl or --use-gl=desktop. 
 On XWayland, use the --use-gl=egl flag (Currently exhibits choppiness FS#67035 on some systems).
 
-# this one is done  XWayland --use-gl=egl
+## this one is done  XWayland --use-gl=egl
 
 
 If VA-API still does not work, try the --disable-features=UseChromeOSDirectVideoDecoder flag [6]
 
-# this one is done
+## this one is done
 
 
 However, hardware acceleration is still not working.
 
 
-# Fix: Pass --ignore-gpu-blocklist this option makes it work.
+## Fix: Pass --ignore-gpu-blocklist makes it work.
 
 https://chromium.googlesource.com/chromium/src/+/master/docs/gpu/vaapi.md#vaapi-on-linux
 
@@ -66,8 +74,5 @@ To run Chromium using VaAPI three arguments are necessary:
 --use-gl=desktop or --use-gl=egl
 
 
-# Caveat: some codecs might not supported by gpu driver, especially for an relatively old chip.
-
-
-# this means xwayland is supported, but with issues.
+# Caveat: some codecs might not supported by gpu driver, especially for a relatively old chip.
 
