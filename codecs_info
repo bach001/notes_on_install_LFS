@@ -1,0 +1,56 @@
+
+
+----------------------------------------------------------------------------------
+
+
+A confusing name VdaVideoDecoder from chrome://media-internals/
+
+source code explains itself
+
+media/gpu/ipc/service/vda_video_decoder.h - chromium/srchttps://chromium.googlesource.com › chromium › vda...
+This class expects to run in the GPU process via MojoVideoDecoder. class VdaVideoDecoder : 
+public VideoDecoder,. public VideoDecodeAccelerator::Client,.
+
+
+
+----------------------------------------------------------------------------------
+
+
+What is the AV1 codec?
+
+AV1 is an open, royalty-free, next-generation video coding format from the 
+Alliance for Open Media. It was designed to succeed Google’s VP9 and compete 
+with H.265/HEVC. AV1 can provide 30% bandwidth savings compared to VP9 and HEVC 
+and drastically improves visual quality at equivalent bitrates.
+
+
+----------------------------------------------------------------------------------
+
+
+VC-1 is an evolution of the conventional video codec design that is based on 
+discrete cosine transform (DCT) and also found in H. 261, H. 263, MPEG-1, MPEG-2, and MPEG-4. 
+VC-1 is an alternative to the MPEG-4 AVC (H. 264) video codec standard.
+
+
+further reading: https://en.wikipedia.org/wiki/VC-1
+
+
+----------------------------------------------------------------------------------
+
+
+Is royalty-free really free?
+
+
+Image result for royalty-free
+Royalty-free is not free of charge – The image license has a price, 
+that you must pay in order to use the copyrighted material. 
+It is not a free-to-use license. 
+
+Royalty-free is not free of terms or restrictions – The license terms are to be followed 
+in order to make legal use of the stock images under this contract.
+
+
+----------------------------------------------------------------------------------
+
+https://www.brid.tv/best-video-codecs-to-use-and-how-to-choose-the-right-one/
+
