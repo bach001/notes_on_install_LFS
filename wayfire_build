@@ -1,0 +1,30 @@
+
+# install glm
+
+export PKG_CONFIG_PATH=/usr/local/share/pkgconfig:$PKG_CONFIG_PATH
+
+create a pc file for pkg-config: https://github.com/WayfireWM/wayfire/issues/341
+
+prefix=/usr
+includedir=${prefix}/include
+
+Name: GLM
+Description: OpenGL Mathematics
+Version: 0.9.9
+Cflags: -I${includedir}
+
+
+# install wf-config
+
+  meson setup build && cd build
+  meson compile
+  meson install
+
+
+# cmake general command
+
+  mkdir build
+  cmake ..
+  cmake --build .
+  cmake --install . [--prefix=<path>]
+
