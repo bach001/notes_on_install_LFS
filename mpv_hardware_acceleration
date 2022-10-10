@@ -3,6 +3,8 @@
 
 # test mpv hardware acceleration capabilities using the following command
 
+https://man.archlinux.org/man/mpv.1#hwdec
+
 mpv --hwdec=yes --log-file=mpv.log --msg-level=vd=v,vo=v,vo/gpu/vaapi-egl=trace *.mp4
 
 
