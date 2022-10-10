@@ -1,0 +1,18 @@
+
+# libenchant
+
+configure: WARNING: No spell-checking provider selected!
+configure: WARNING: Building without --enable-relocatable: the tests will not work!
+
+
+# ECM
+
+git clone https://github.com/KDE/extra-cmake-modules
+
+cd extra-cmake-modules
+mkdir build
+cd build
+cmake .. # or run : cmake -DCMAKE_INSTALL_PREFIX=/usr .. &&
+make
+sudo make install
+
