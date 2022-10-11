@@ -1,13 +1,25 @@
 
-https://github.com/fcitx/fcitx5-chinese-addons
+# follow the general cmake building step
+
+mkdir build
+cd build
+cmake ..
+make
+make install
+
+
+
+# https://github.com/fcitx/fcitx5-chinese-addons
 
 cmake version 3.24.1
+
 
 ## install dependencies
 
 https://github.com/fcitx/libime
 
-https://github.com/kpu/kenlm
+check into kenlm subdirectory under libime https://github.com/kpu/kenlm
+
 
 Fix: https://github.com/fcitx/libime/issues/38
 
