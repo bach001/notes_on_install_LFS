@@ -5,7 +5,7 @@ configure: WARNING: No spell-checking provider selected!
 configure: WARNING: Building without --enable-relocatable: the tests will not work!
 
 
-# ECM
+# ECM extra cmake modules
 
 git clone https://github.com/KDE/extra-cmake-modules
 
@@ -17,7 +17,9 @@ make
 sudo make install
 
 
-# libevent -> see: https://github.com/fcitx/fcitx5/issues/11
+# fcitx5 use systemd and dbus but fallback to libevent when not found
+
+libevent -> see: https://github.com/fcitx/fcitx5/issues/11
 
 https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
 
@@ -36,5 +38,88 @@ make
 mkdir build          # Create a directory to hold the build output.
 cd build
 cmake -DBUILD_SHARED_LIBS=TRUE ..
+
+
+
+# install fcitx5-qt 
+
+Qt5 library needs to be installed, but compiling is very time-consuming, just use Qt online installer
+
+create a Qt account for authentication
+download qt-unified-linux-x64-4.4.2-online.run 
+
+
+
+Fix #1 qt-unified-linux-x64-4.4.2-online.run load libbz2.so.1 and libgssapi_krb5.so
+
+make a symbol link to already installed libbz2.so.1.0
+
+following this guide https://www.linuxfromscratch.org/blfs/view/svn/postlfs/mitkrb.html
+install package https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz
+
+
+
+Fix #2 Error: Authorization required, but no authorization protocol specified
+
+qt.qpa.xcb: could not connect to display :0
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: minimal, xcb.
+
+
+Fix #3 qt-unified-linux-x64-4.4.2-online.run can't be run as root
+
+https://bbs.archlinux.org/viewtopic.php?id=278342
+https://wiki.archlinux.org/title/Running_GUI_applications_as_root#Wayland
+
+A more versatile —though much less secure— workaround is to use xhost to temporarily allow the root user to access the local user's X session[5]. To do so, execute the following command as the current (unprivileged) user:
+
+$ xhost si:localuser:root
+
+To remove this access after the application has been closed:
+
+$ xhost -si:localuser:root
+
+
+Fix #4 modify the Qt version set(REQUIRED_QT5_VERSION 5.15.2) in CMakeLists.txt
+
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/ let cmake find Qt library
+
+# Qt5.15.2 successfully installed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
