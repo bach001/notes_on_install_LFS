@@ -45,6 +45,8 @@ cmake -DBUILD_SHARED_LIBS=TRUE ..
 
 Qt5 library needs to be installed, but compiling is very time-consuming, just use Qt online installer
 
+follow this guide: https://www.geopsy.org/wiki/index.php/Installing_Qt_binary_packages
+
 create a Qt account for authentication
 download qt-unified-linux-x64-4.4.2-online.run 
 
@@ -87,39 +89,5 @@ Fix #4 modify the Qt version set(REQUIRED_QT5_VERSION 5.15.2) in CMakeLists.txt
 export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/ let cmake find Qt library
 
 # Qt5.15.2 successfully installed
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
