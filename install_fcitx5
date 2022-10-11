@@ -91,3 +91,47 @@ export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/ let cmake find Qt library
 # Qt5.15.2 successfully installed
 
 
+
+# install fcitx5-gtk
+
+install all the following dependencies
+
+https://www.linuxfromscratch.org/blfs/view/svn/x/gtk2.html
+https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.33.tar.xz
+
+
+https://www.linuxfromscratch.org/blfs/view/svn/x/gtk4.html
+https://download.gnome.org/sources/gtk/4.8/gtk-4.8.1.tar.xz
+
+https://www.linuxfromscratch.org/blfs/view/svn/multimedia/gst10-plugins-base.html
+https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.20.3.tar.xz
+
+
+https://www.linuxfromscratch.org/blfs/view/svn/multimedia/gst10-plugins-bad.html
+https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.20.3.tar.xz
+
+
+https://www.linuxfromscratch.org/blfs/view/svn/multimedia/gst10-plugins-good.html
+https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.20.3.tar.xz
+
+
+https://www.linuxfromscratch.org/blfs/view/svn/x/graphene.html
+https://download.gnome.org/sources/graphene/1.10/graphene-1.10.8.tar.xz
+
+
+https://www.linuxfromscratch.org/blfs/view/stable/multimedia/gst10-libav.html
+https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.20.3.tar.xz
+
+
+https://www.linuxfromscratch.org/blfs/view/stable/multimedia/gst10-plugins-ugly.html
+https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.20.3.tar.xz
+
+
+https://www.linuxfromscratch.org/blfs/view/stable/multimedia/gstreamer10-vaapi.html
+https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.20.3.tar.xz
+
+
+https://www.linuxfromscratch.org/blfs/view/svn/multimedia/gstreamer10.html
+https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.20.3.tar.xz
+
+
