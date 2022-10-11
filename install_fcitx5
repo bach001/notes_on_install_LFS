@@ -16,3 +16,25 @@ cmake .. # or run : cmake -DCMAKE_INSTALL_PREFIX=/usr .. &&
 make
 sudo make install
 
+
+# libevent -> see: https://github.com/fcitx/fcitx5/issues/11
+
+https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
+
+sed -i 's/python/&3/' event_rpcgen.py
+
+Install libevent by running the following commands:
+
+./configure --prefix=/usr --disable-static &&
+
+make
+
+
+
+# libfmt https://github.com/fmtlib/fmt
+
+mkdir build          # Create a directory to hold the build output.
+cd build
+cmake -DBUILD_SHARED_LIBS=TRUE ..
+
+
