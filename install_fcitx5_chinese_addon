@@ -13,6 +13,7 @@ make install
 
 cmake version 3.24.1
 
+## install https://github.com/BYVoid/OpenCC
 
 ## install dependencies
 
@@ -23,5 +24,8 @@ check into kenlm subdirectory under libime https://github.com/kpu/kenlm
 
 Fix: https://github.com/fcitx/libime/issues/38
 
+# feature disabled
 
+option(ENABLE_TEST "Build Test" Off) # disable test
+option(ENABLE_BROWSER "Enable built-in browser." Off) # disable built-in browser
 
