@@ -1,0 +1,13 @@
+
+
+https://github.com/mpv-player/mpv/issues/9773
+
+##  x11 needs to be enabled which requres libXpresent to be installed
+
+https://www.x.org/archive//individual/lib/libXpresent-1.0.0.tar.gz
+
+./configure $XORG_CONFIG
+make
+make install
+
+ldconfig
