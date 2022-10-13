@@ -1,0 +1,13 @@
+
+
+# install mozc
+
+##1 install bazel
+
+follow this guide https://bazel.build/install/compile-source#bootstrap-unix-prereq
+  
+##2 compile mozc
+
+
+  
+  
