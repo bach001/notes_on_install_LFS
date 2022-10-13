@@ -1,0 +1,28 @@
+
+
+#1 "/var/lib/sddm/.config/sddm-greeterrc" not writable
+
+
+Fix:  chown -R sddm:sddm /var/lib/sddm/.config
+
+
+#2 su sudo unlock screen failed
+
+Fix: follow this guide ->  https://bbs.archlinux.org/viewtopic.php?id=241046
+
+
+chown root:root to all those files
+
+sudo chmod 4755 /sbin/unix_chkpwd
+
+sudo chmod 4755 /usr/bin/su
+
+sudo chmod 4755 /usr/bin/sudo
+
+All are related PAM package and configuration
+
+
+# test it
+
+/usr/lib/kscreenlocker_greet --testing
+
