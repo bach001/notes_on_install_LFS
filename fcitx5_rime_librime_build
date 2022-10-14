@@ -1,0 +1,31 @@
+
+# build dependencies
+
+compiler with C++14 support 
+cmake>=2.8
+libboost>=1.48 
+libopencc>=1.0.2
+libglog (optional)
+libgtest (optional) off
+
+
+## all the following libraries default build generates no dynamic library
+
+add this option to the top-level CMakeLists.txt option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
+
+https://cmake.org/cmake/help/latest/guide/tutorial/Selecting%20Static%20or%20Shared%20Libraries.html
+
+libleveldb
+libmarisa
+libyaml-cpp>=0.5
+
+
+# build librime
+
+Fix exp error see https://github.com/rime/librime/pull/476
+
+2 files need to be modified
+
+
+
+
