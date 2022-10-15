@@ -1,0 +1,13 @@
+
+# follow this guide
+
+https://wiki.archlinux.org/title/mozc
+
+
+# download ut dictionary
+
+
+http://linuxplayers.g1.xrea.com/mozc-ut.html#install
+
+cat mozcdic-ut-20220904/mozcdic-ut-20220904.txt >> mozc-master/src/data/dictionary_oss/dictionary00.txt
+
