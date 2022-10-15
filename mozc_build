@@ -14,6 +14,7 @@ follow this guide https://bazel.build/install/compile-source#bootstrap-unix-prer
             server:mozc_server \
             gui/tool:mozc_tool
 
+an extra link option needs to be passed --linkopt="-lFcitx5*"
 
 install using ../scripts/install_fcitx5_bazel and ../scripts/install_server_bazel 
 
