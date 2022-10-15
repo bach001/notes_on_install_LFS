@@ -1,0 +1,13 @@
+
+# mozc_server has to be placed under /usr/lib/mozc directory
+
+fcitx5_mozc.log shows that it looks for mozc_server in /usr/lib/mozc
+
+but the installation placed mozc_server under /usr/local/lib/mozc
+
+
+# Informative reference https://wiki.archlinux.org/title/Input_method
+
+there has such a sentence:  Do not change fcitx to fcitx5 even if you are using Fcitx5.[2]
+
+in addition this page contains very informative information about Input Method Framework
