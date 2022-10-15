@@ -2,20 +2,24 @@
 
 # install mozc
 
-##1 install bazel
+##1 install bazel bazel needs **bootstraping**
 
 follow this guide https://bazel.build/install/compile-source#bootstrap-unix-prereq
-  
+
+
 ##2 compile mozc using this guide https://fcitx-im.org/wiki/Compiling_Mozc
 
 
-./bazel build -c opt --copt=-fPIC --config oss_linux \
-            unix/fcitx5:fcitx5-mozc.so \
-            server:mozc_server \
+bazel build --linkopt="/usr/local/lib -lFcitx5Core -lFcitx5Config -lFcitx5Utils" \
+            -c opt --copt=-fPIC --config oss_linux                  \
+            unix/fcitx5:fcitx5-mozc.so                              \
+            server:mozc_server                                      \
             gui/tool:mozc_tool
 
 an extra link option needs to be passed --linkopt="-lFcitx5*"
 
-install using ../scripts/install_fcitx5_bazel and ../scripts/install_server_bazel 
+
+##3 install using ../scripts/install_fcitx5_bazel 
+                  ../scripts/install_server_bazel 
 
   
