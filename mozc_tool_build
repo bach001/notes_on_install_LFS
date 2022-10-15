@@ -1,8 +1,34 @@
 
+->->->->->->->->->->->->->->->->
+Wow it was a long journey!
+->->->->->->->->->->->->->->->->
 
-Wow it's a long journey!
+
+#1 the initial compilation of mozc_tool failed miserably on the main branch: https://github.com/fcitx/mozc.git
+
+#2 no clue what went wrong bazel is too strange to me
+
+#3 several days later, figure out that a correct version must be ferried out
+
+a good reference
+
+https://raw.githubusercontent.com/archlinux/svntogit-community/packages/fcitx5-mozc/trunk/PKGBUILD
+
+
+#4 the branch seems to be undergoing drastic changes, lots of checkouts couldn't be compiled
 
 
 
+But finally we are here, checkout this commit point ea23a3886c2d900d4135804663931bc0373b45ea
 
-But finally we are here, checkout ea23a3886c2d900d4135804663931bc0373b45ea
+
+bazel build --linkopt="-L/usr/local/Qt/5.15.2/gcc_64/lib -lQt5Core -lQt5Gui -lQt5Widgets" \
+               -c opt --copt=-fPIC                                                        \
+               --config oss_linux                                                         \
+               gui/tool:mozc_tool
+
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+** git and cmake knowledge must be solidated.
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
