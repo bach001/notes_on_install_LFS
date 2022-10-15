@@ -1,5 +1,5 @@
 
-# build dependencies
+# build librime dependencies
 
 compiler with C++14 support 
 cmake>=2.8
@@ -25,6 +25,31 @@ libyaml-cpp>=0.5
 Fix exp error see https://github.com/rime/librime/pull/476
 
 2 files need to be modified
+
+
+# build fcitx5-rime
+
+install rime-data
+
+follow this guide: https://github.com/rime/plum
+
+curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bash
+
+this command install rime-data to ~/.config/ibus/rime
+
+see https://www.796t.com/article.php?id=310731
+
+而東風破 /plum/的rime-install是為ibus-rime配置的，不支援fcitx5。雖然不可以直接然後，
+不過也可以將rime-install生成在~/.config/ibus裡的yaml拷貝到/usr/share/rime-data
+
+copy rime data eg  ~/.config/ibus/rime/* to /usr/local/share/rime-data or where you want it to be placed
+
+export RIME_DATA_DIR="/usr/local/share/rime-data"
+
+
+
+
+
 
 
 
