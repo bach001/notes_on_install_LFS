@@ -1,0 +1,60 @@
+
+#1 build kde framework library
+
+https://www.linuxfromscratch.org/blfs/view/svn/kde/kf5-intro.html
+https://www.linuxfromscratch.org/blfs/view/svn/kde/frameworks5.html
+
+some packages failed to compile, but they are not needed, leave them as they are
+
+
+#2 set necessary env variables edit and run the following commands in a script
+
+export PKG_CONFIG_PATH=/opt/kf5/lib64/pkgconfig/:$PKG_CONFIG_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Core:$CMAKE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Gui:$CMAKE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Widgets:$CMAKE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Designer:$CMAKE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5LinguistTools:$CMAKE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5DBus:$CMAKE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Svg:$CMAKE_PREFIX_PATH
+
+
+# following the general steps of cmake
+
+Installing in /usr/local. Run /home/labia/libs/fcitx5-configtool-5.0.15/build/prefix.sh to set the environment for fcitx5-configtool.
+-- Could not set up the appstream test. appstreamcli is missing.
+-- The following RUNTIME packages have been found:
+
+ * Qt5Svg, May be used for show icons
+
+-- The following OPTIONAL packages have been found:
+
+ * Freetype
+ * Fontconfig
+
+-- The following REQUIRED packages have been found:
+
+ * ECM (required version >= 1.0.0)
+ * Qt5X11Extras
+ * Qt5Concurrent
+ * Qt5 (required version >= 5.12.0)
+ * Fcitx5Core (required version >= 5.0.4)
+ * Fcitx5Config
+ * Fcitx5Qt5DBusAddons
+ * Fcitx5Utils
+ * Qt5Core (required version >= 5.15.2)
+ * Qt5Gui (required version >= 5.15.2)
+ * Fcitx5Qt5WidgetsAddons (required version >= 5.0.2)
+ * Qt5Widgets (required version >= 5.15.2)
+ * KF5WidgetsAddons
+ * IsoCodes
+ * Gettext
+ * X11
+ * PkgConfig
+ * XKeyboardConfig
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/labia/libs/fcitx5-configtool-5.0.15/build
+
+
