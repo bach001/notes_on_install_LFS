@@ -10,7 +10,7 @@ follow this guide https://bazel.build/install/compile-source#bootstrap-unix-prer
 ##2 compile mozc using this guide https://fcitx-im.org/wiki/Compiling_Mozc
 
 
-bazel build --linkopt="/usr/local/lib -lFcitx5Core -lFcitx5Config -lFcitx5Utils" \
+bazel build --linkopt="-L/usr/local/lib -lFcitx5Core -lFcitx5Config -lFcitx5Utils" \
             -c opt --copt=-fPIC --config oss_linux                  \
             unix/fcitx5:fcitx5-mozc.so                              \
             server:mozc_server                                      \
