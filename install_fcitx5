@@ -47,21 +47,25 @@ Qt5 library needs to be installed, but compiling is very time-consuming, just us
 
 follow this guide: https://www.geopsy.org/wiki/index.php/Installing_Qt_binary_packages
 
-create a Qt account for authentication
-download qt-unified-linux-x64-4.4.2-online.run 
+##1 create a Qt account for authentication
+
+##2 download qt-unified-linux-x64-4.4.2-online.run 
 
 
+##3 qt installer requires installing a few library 
 
-Fix #1 qt-unified-linux-x64-4.4.2-online.run load libbz2.so.1 and libgssapi_krb5.so
+otherwise error emitted: qt-unified-linux-x64-4.4.2-online.run load libbz2.so.1 and libgssapi_krb5.so
+
+following this guide https://www.linuxfromscratch.org/blfs/view/svn/postlfs/mitkrb.html
 
 make a symbol link to already installed libbz2.so.1.0
 
-following this guide https://www.linuxfromscratch.org/blfs/view/svn/postlfs/mitkrb.html
 install package https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz
 
 
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
-Fix #2 Error: Authorization required, but no authorization protocol specified
+Error: Authorization required, but no authorization protocol specified
 
 qt.qpa.xcb: could not connect to display :0
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
@@ -69,8 +73,10 @@ This application failed to start because no Qt platform plugin could be initiali
 
 Available platform plugins are: minimal, xcb.
 
+qt-unified-linux-x64-4.4.2-online.run can't be run as root
 
-Fix #3 qt-unified-linux-x64-4.4.2-online.run can't be run as root
+
+Fix:
 
 https://bbs.archlinux.org/viewtopic.php?id=278342
 https://wiki.archlinux.org/title/Running_GUI_applications_as_root#Wayland
@@ -84,11 +90,24 @@ To remove this access after the application has been closed:
 $ xhost -si:localuser:root
 
 
-Fix #4 modify the Qt version set(REQUIRED_QT5_VERSION 5.15.2) in CMakeLists.txt
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
-export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/ let cmake find Qt library
+##4  set necessary env variables
 
-# Qt5.15.2 successfully installed
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Core:$CMAKE_PRREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Gui:$CMAKE_PREEFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Widgets:$CMAKEE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Designer:$CMAKKE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5LinguistTools:$CMAKE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5DBus:$CMAKE_PRREFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Svg:$CMAKE_PREEFIX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5:$CMAKE_PREFIXX_PATH
+export CMAKE_PREFIX_PATH=/usr/local/Qt/5.15.2/gcc_64/lib/cmake/Qt5Concurrent:$CMMAKE_PREFIX_PATH
+                                       
+
+# mkdir build && cd build && cmake .. && make && make install
+
+Qt5.15.2 successfully installed
 
 
 
