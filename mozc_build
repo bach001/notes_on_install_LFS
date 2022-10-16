@@ -1,4 +1,15 @@
 
+******************************************************************************************************
+
+a temporary workaround
+
+to build fcitx5-mozc.so and mozc_server checkout this fccaf92a68a7ff7b4a0115863cfc675331f2125d
+to build mozc_tool checkout this ea23a3886c2d900d4135804663931bc0373b45ea
+
+it's clear that something has gone wrong in the branch
+
+******************************************************************************************************
+
 
 # install mozc
 
