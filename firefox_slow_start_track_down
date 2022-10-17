@@ -46,7 +46,21 @@ the --nohook (-C) command line option or by the nohook option in the /etc/dhcpcd
 
 Firefox takes 30 seconds to start
 https://bbs.archlinux.org/viewtopic.php?id=275523
+https://bbs.archlinux.org/viewtopic.php?id=253220
 
+
+# very informative info online
+
+
+https://wiki.archlinux.org/title/dhcpcd
+https://man.archlinux.org/man/dhcpcd-run-hooks.8
+https://man.archlinux.org/man/dhcpcd.conf.5
+
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+what the hell is going on!
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
 
 # all above still doesn't work, resolv.conf still gets updated
@@ -62,17 +76,3 @@ dhcpcd looks like a rogue software!
 but by creating a resolv.conf.head under /etc/ and put our nameserver in it, 
 
 they were put before others lines in resolv.conf when updating, thus got priority
-
-
-
-
-https://bbs.archlinux.org/viewtopic.php?id=253220
-
-
-# very informative info online
-
-
-https://wiki.archlinux.org/title/dhcpcd
-https://man.archlinux.org/man/dhcpcd-run-hooks.8
-https://man.archlinux.org/man/dhcpcd.conf.5
-
