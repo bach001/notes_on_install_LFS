@@ -1,0 +1,43 @@
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+it's a painful journey
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+# by using strace to trace the firefox, it shows that firefox hangs on a connect call(why?)
+
+# but the dns nameserver is very slow to respond
+
+# edit resolv.conf using another ip 
+
+# but resolv.conf gets updated by dhcpcd periodically
+
+# disabling update using --nohook -reslov.conf,-hostname
+
+
+linuxfromscratch.org/blfs/view/stable/basicnet/dhcpcd.html
+
+The default for dhcpcd is to set the hostname and mtu. 
+It also overwrites /etc/resolv.conf and /etc/ntp.conf. 
+These modifications to system files are done by hooks which are stored 
+in /usr/lib/dhcpcd/dhcpcd-hooks. Setup dhcpcd by removing or adding hooks 
+from/to that directory. The execution of hooks can be disabled by using 
+the --nohook (-C) command line option or by the nohook option in the /etc/dhcpcd.conf file.
+
+
+# similar symptoms online
+
+
+Firefox takes 30 seconds to start
+https://bbs.archlinux.org/viewtopic.php?id=275523
+
+
+https://bbs.archlinux.org/viewtopic.php?id=253220
+
+
+# very informative info online
+
+
+https://wiki.archlinux.org/title/dhcpcd
+https://man.archlinux.org/man/dhcpcd-run-hooks.8
+https://man.archlinux.org/man/dhcpcd.conf.5
+
