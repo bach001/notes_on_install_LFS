@@ -13,6 +13,9 @@ it's a painful journey
 
 # disabling update using --nohook -reslov.conf,-hostname
 
+pay attention to the hypen - it looks like a deliberately named names that can hook you!
+
+
 
 linuxfromscratch.org/blfs/view/stable/basicnet/dhcpcd.html
 
