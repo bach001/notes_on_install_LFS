@@ -5,7 +5,7 @@ follow this guide https://support.mozilla.org/en-US/questions/1212156
 
 more specifically
 
-create chrome directory under ~/.mozilla/firefox/
+create chrome directory under ~/.mozilla/firefox/<profile>/
 
 create css file userChrome.css under chrome directory
 
@@ -17,3 +17,6 @@ create css file userChrome.css under chrome directory
 #navigator-toolbox[inFullscreen="true"] #PersonalToolbar {
   visibility: unset !important;
 }
+
+
+profile can be viewed under help->more trouble shooting -> basics
