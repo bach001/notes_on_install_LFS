@@ -13,7 +13,7 @@ connecting to a nameserver is reasonable
 
 
 
-# but the dns nameserver is very slow to respond
+# but the dns nameserver is definitely unreachable
 
 # edit resolv.conf using another ip 
 
@@ -76,3 +76,5 @@ dhcpcd looks like a rogue software!
 but by creating a resolv.conf.head under /etc/ and put our nameserver in it, 
 
 they were put before others lines in resolv.conf when updating, thus got priority
+
+
