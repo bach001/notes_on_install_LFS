@@ -3,13 +3,27 @@
 it's a painful journey
 ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
-# by using strace to trace the firefox, it shows that firefox hangs on a connect call(why?)
+
+# by using strace to trace the firefox, it shows that firefox hangs on connecting to a nameserver
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+connecting to a nameserver is reasonable
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
 
 # but the dns nameserver is very slow to respond
 
 # edit resolv.conf using another ip 
 
 # but resolv.conf gets updated by dhcpcd periodically
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+it's strange that a nameserver line was put in resolv.conf but the address is unreachable
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
 
 # disabling update using --nohook -reslov.conf,-hostname
 
@@ -32,6 +46,24 @@ the --nohook (-C) command line option or by the nohook option in the /etc/dhcpcd
 
 Firefox takes 30 seconds to start
 https://bbs.archlinux.org/viewtopic.php?id=275523
+
+
+
+# all above still doesn't work, resolv.conf still gets updated
+
+even hooks directory was removed, it gets automatically created
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+dhcpcd looks like a rogue software!
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
+but by creating a resolv.conf.head under /etc/ and put our nameserver in it, 
+
+they were put before others lines in resolv.conf when updating, thus got priority
+
+
 
 
 https://bbs.archlinux.org/viewtopic.php?id=253220
