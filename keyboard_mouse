@@ -5,6 +5,8 @@ xinput --list
 
 xinput --set-prop "SynPS/2...." "Device Enabled" 0
 
+https://www.linuxquestions.org/questions/linux-laptop-and-netbook-25/keyboard-jumps-while-typing-4175459782/
+
 
 
 # keyboard repeate rate ? cursor randomly jumping forward or backward
