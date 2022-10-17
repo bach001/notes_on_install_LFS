@@ -20,3 +20,14 @@ create css file userChrome.css under chrome directory
 
 
 profile can be viewed under help->more trouble shooting -> basics
+
+
+
+However, so far it still dosen't work
+
+see https://winaero.com/enable-loading-userchrome-css-usercontent-css-firefox/
+
+about:config
+
+toolkit.legacyUserProfileCustomizations.stylesheets = true
+
