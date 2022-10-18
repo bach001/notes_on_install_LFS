@@ -1,0 +1,7 @@
+
+
+# sudo /usr/local/Qt/MaintainaceToll
+
+must run as root otherwise polkit authentication fail
+
+# this program can not be run in wayland
