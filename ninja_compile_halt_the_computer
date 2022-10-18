@@ -1,0 +1,5 @@
+
+# ninja compile run in core number of parallel threads cause lots of swapping but 
+  the swap partition is too small(2G) eventually the system halted
+  
+# ninja -j3 makes it work, but it takes too long to finish
