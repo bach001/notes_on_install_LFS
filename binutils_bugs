@@ -1,0 +1,23 @@
+
+# seems to be harmless
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
+ERROR: compilation of test program in jsynprog failed
+ERROR: comparison of results in mttest failed
+
+
+binutils bugs
+
+FAIL: Run p_align-1b with PIE
+FAIL: Run p_align-1d with -Wl,-z,max-page-size=0x1000 with PIE
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
+udevadm hwdb --update
+
+This command needs to be run each time the hardware information is updated.
+
+
