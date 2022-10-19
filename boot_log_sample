@@ -1,0 +1,21 @@
+
+Oct 19 01:08:12 +08:00 (none)  Mounting virtual file systems: /run /proc /sys OK
+Oct 19 01:08:12 +08:00 (none)  Bringing up the loopback interface... OK
+Oct 19 01:08:12 +08:00 (none)  Setting hostname to lfs-11.2... OK
+Oct 19 01:08:12 +08:00 lfs-11.2  Populating /dev with device nodes...  OK
+Oct 19 01:08:13 +08:00 lfs-11.2  Activating all swap files/partitions... OK
+Oct 19 01:08:13 +08:00 lfs-11.2  Mounting root file system in read-only mode...  OK
+Oct 19 01:08:13 +08:00 lfs-11.2  Checking file systems... OK
+Oct 19 01:08:13 +08:00 lfs-11.2  Remounting root file system in read-write mode... OK
+Oct 19 01:08:13 +08:00 lfs-11.2  Mounting remaining file systems... OK
+Oct 19 01:08:13 +08:00 lfs-11.2  Cleaning file systems: /tmp OK
+Oct 19 01:08:13 +08:00 lfs-11.2  Creating files and directories...  OK
+Oct 19 01:08:13 +08:00 lfs-11.2  Retrying failed uevents, if any... OK
+Oct 19 01:08:14 +08:00 lfs-11.2  Starting system log daemon... OK
+Oct 19 01:08:14 +08:00 lfs-11.2  Starting kernel log daemon... OK
+Oct 19 01:08:14 +08:00 lfs-11.2  Bringing up the wlp1s0 interface... OK
+Oct 19 01:08:14 +08:00 lfs-11.2  Starting dhcpcd on the wlp1s0 interface... OK
+Oct 19 01:08:14 +08:00 lfs-11.2  Initializing kernel random number generator... OK
+Oct 19 01:08:14 +08:00 lfs-11.2  Starting the D-Bus Messagebus Daemon... OK
+
+
