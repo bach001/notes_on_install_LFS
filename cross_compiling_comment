@@ -1,0 +1,116 @@
+
+
+this is briefly talked about in https://linuxfromscratch.org/lfs/view/stable/partintro/toolchaintechnotes.html
+
+
+1	A	A	B	build cross-compiler cc1 using ccA on machine A
+2	A	B	C	build cross-compiler cc2 using cc1 on machine A
+3	B	C	C	build compiler ccC using cc2 on machine B
+
+
+=============================================
+target is used to talk about compiler!!
+=============================================
+
+
+for building lfs, this process is simplified
+
+1	pc	pc	lfs	build cross-compiler cc1 using cc-pc on pc
+2	pc	lfs	lfs	build compiler cc-lfs using cc1 on pc
+
+
+
+# to better undestand cross-compiling, some further matereial must be read
+
+
+# an important paragraph
+
+Now, there is more about cross-compiling: the C language is not just a compiler, but also defines a standard library. 
+In this book, the GNU C library, named glibc, is used. This library must be compiled for the lfs machine, 
+that is, using the cross compiler cc1. But the compiler itself uses an internal library implementing complex 
+instructions not available in the assembler instruction set. 
+
+
+This internal library is named libgcc, and must be linked to the glibc library to be fully functional! Furthermore, 
+the standard library for C++ (libstdc++) also needs being linked to glibc. 
+
+
+The solution to this chicken and egg problem is to first build a degraded cc1 based libgcc, 
+lacking some functionalities such as threads and exception handling, then build glibc using this degraded compiler 
+(glibc itself is not degraded), then build libstdc++. 
+
+# this is done in PASS 1 when compiling gcc
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+--with-newlib
+Since a working C library is not yet available, this ensures that the inhibit_libc constant is 
+defined when building libgcc. This prevents the compiling of any code that requires libc support.
+
+--without-headers
+When creating a complete cross-compiler, GCC requires standard headers compatible with the 
+target system. For our purposes these headers will not be needed. This switch prevents GCC from looking for them.
+
+--disable-decimal-float, --disable-threads, --disable-libatomic, --disable-libgomp, 
+--disable-libquadmath, --disable-libssp, --disable-libvtv, --disable-libstdcxx
+These switches disable support for the decimal floating point extension, threading, 
+libatomic, libgomp, libquadmath, libssp, libvtv, and the C++ standard library respectively. 
+These features will fail to compile when building a cross-compiler and are not necessary for 
+the task of cross-compiling the temporary libc.
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
+But this last library will lack the same functionalities as libgcc.
+
+
+This is not the end of the story: the conclusion of the preceding paragraph is that cc1 is unable to build a 
+fully functional libstdc++, 
+
+
+but this is the only compiler available for building the C/C++ libraries during stage 2! 
+
+Of course, the compiler built during stage 2, cc-lfs, would be able to build those libraries, 
+
+-----------------------------------------------------------------------------------------------------------
+but (1) the build system of GCC does not know that it is usable on pc, 
+and (2) using it on pc would be at risk of linking to the pc libraries, since cc-lfs is a native compiler. 
+-----------------------------------------------------------------------------------------------------------
+
+So we have to build libstdc++ later, in chroot.
+
+
+
+# in PASS 1 limits.h is manually created
+
+
+
+================================================================================
+
+# libstdc is not yet fully functional
+
+for example 
+
+In PASS 2 there are commands and configure options to limit the compiling
+
+Override the building rule of libgcc and libstdc++ headers, 
+to allow building these libraries with POSIX threads support:
+
+
+sed '/thread_header =/s/@.*@/gthr-posix.h/' \
+    -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in
+
+
+    --disable-decimal-float                        \
+    --disable-libatomic                            \
+    --disable-libgomp                              \
+    --disable-libquadmath                          \
+    --disable-libssp                               \
+    --disable-libvtv                               \
+    
+================================================================================
+
+
+
+# in chroot environment gcc is finally built fully functional
+
