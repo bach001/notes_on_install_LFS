@@ -1,0 +1,53 @@
+
+->->->->->->->->->->->->->->->->->->->->->->
+this has been a very long-time issue
+->->->->->->->->->->->->->->->->->->->->->->
+
+
+# check device and driver
+
+https://wiki.archlinux.org/title/libinput
+
+One way to check which devices are managed by libinput is the xorg logfile. 
+For example, the following:
+
+$ grep -e "Using input driver 'libinput'" /path/to/Xorg.0.log
+
+
+
+# other people have experienced the same
+
+Scrolling is too slow after resume from suspend
+https://gitlab.freedesktop.org/libinput/libinput/-/issues/395
+
+
+
+# it's a kernel bug version >= 5.x
+
+https://bugzilla.kernel.org/show_bug.cgi?id=203421
+https://bugzilla.redhat.com/show_bug.cgi?id=1701322
+
+
+# patch is still under way after 2 years
+
+https://patchwork.kernel.org/project/linux-input/patch/20190423154615.18257-1-benjamin.tissoires@redhat.com/
+
+
+# other people's workaround 
+
+##1 apply patch and recompile kernel 
+##2 install resetmsmice 
+##3 using solaar
+
+https://askubuntu.com/questions/1136187/how-do-i-fix-very-slow-scrolling-usb-wheel-mouse-after-waking-from-suspend-whi
+https://askubuntu.com/questions/1140117/mouse-scroll-needs-17-ticks-to-register-1-movement-on-fresh-ubuntu-19-04
+https://unix.stackexchange.com/questions/510153/mouse-scroll-wheel-speed-problem-with-linux-kernel-5-0
+https://bbs.archlinux.org/viewtopic.php?id=245501
+
+
+# try option 2
+
+
+
+
+
