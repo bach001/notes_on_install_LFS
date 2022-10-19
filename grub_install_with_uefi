@@ -1,0 +1,71 @@
+
+#1 General info
+
+The installation of GRUB on a UEFI platform requires that the EFI Variable file system
+The efivar package provides tools and libraries to manipulate EFI variables.
+
+
+#2 Fix an error
+
+/usr/include/linux/mount.h:95:6: error: redeclaration of 'enum fsconfig_command'
+
+##1 create a file named fs_flag.h with necessary definitions copyed from linux header files
+
+##2 modify efivarfs.c
+
+/* #include <linux/fs.h> */
+#include <sys/mount.h>
+#include "fs_flag.h"
+
+
+<linux/fs.h> conflicts with <sys/mount.h>
+this is a known issue see https://github.com/rhboot/efivar/issues/227
+
+
+
+# grub_install
+
+
+mkdir -pv /boot/efi &&
+mount -v -t vfat /dev/sda4 /boot/efi
+
+## add an entry
+
+cat >> /etc/fstab << EOF
+/dev/sda4 /boot/efi vfat defaults 0 1
+EOF
+
+grub-install --bootloader-id=lfs --recheck
+
+
+
+#3 Directly editing grub.cfg makes multiboot possible
+
+
+cat > /boot/grub/grub.cfg << EOF
+# Begin /boot/grub/grub.cfg
+set default=0
+set timeout=5
+
+insmod part_gpt
+insmod ext2
+set root=(hd0,5)
+
+if loadfont /boot/grub/fonts/unicode.pf2; then
+  set gfxmode=auto
+  insmod all_video
+  terminal_output gfxterm
+fi
+
+menuentry "GNU/Linux, Linux 5.19.2-lfs-11.2"  {
+  linux   /boot/vmlinuz-5.19.2-lfs-11.2 root=/dev/sda5 ro
+}
+
+EOF
+
+
+#4 Disk repartition may make system unbootable, a bootable usb is useful for editing /etc/fstab
+
+#5 To do read grub documentation
+
+
