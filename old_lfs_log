@@ -1,19 +1,5 @@
 
 
-
-->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
-
-
-export XORG_PREFIX="<PREFIX>"
-
-wget -P /mnt/lfs/sources
-
-
-
-mkfs -v -t ext4 /dev/<xxx>
-mkswap /dev/<yyy>
-
-
 ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
 # new user skel
@@ -36,6 +22,10 @@ Qualcomm Atheros QCA9377 802.11ac Wireless Network Adapter (rev 31)
 https://www.linuxfromscratch.org/blfs/view/11.2/postlfs/firmware.html
 
 
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
 # wpa_supplicant needs kernel support
 
 Kernel Configuration
@@ -44,6 +34,10 @@ Enable the following options in the kernel configuration
 as well as specific device drivers for your hardware and
 recompile the kernel if necessary:
 
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
 # UEFI needs kernel support
 
 Kernel Configuration for UEFI support
@@ -51,14 +45,6 @@ Kernel Configuration for UEFI support
 Enable the following options in the kernel configuration
 and recompile the kernel if necessary:
 
-
-->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
-
-#meson general build command
-
-meson setup build && cd build
-meson compile
-meson test
 
 ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
@@ -112,5 +98,26 @@ make modules_install
 cp -iv arch/x86/boot/bzImage /boot/vmlinuz-5.19.2-lfs-11.2
 cp -iv .config /boot/config-5.19.2
 
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
+export XORG_PREFIX="<PREFIX>"
+
+wget -P /mnt/lfs/sources
+
+
+
+mkfs -v -t ext4 /dev/<xxx>
+mkswap /dev/<yyy>
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+#meson general build command
+
+meson setup build && cd build
+meson compile
+meson test
 
 ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
