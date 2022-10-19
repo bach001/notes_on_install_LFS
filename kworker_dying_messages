@@ -1,0 +1,13 @@
+
+
+[    0.775346] kworker/u16:5 (127) used greatest stack depth: 14352 bytes left
+[ 1525.207667] kworker/dying (92) used greatest stack depth: 12592 bytes left
+[ 6624.314106] kworker/dying (53) used greatest stack depth: 12016 bytes left
+[14357.562908] kworker/dying (79) used greatest stack depth: 11992 bytes left
+
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1297138
+
+
+# the above link says this message is harmless
+
