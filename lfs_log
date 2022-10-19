@@ -1,0 +1,116 @@
+
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
+export XORG_PREFIX="<PREFIX>"
+
+wget -P /mnt/lfs/sources
+
+
+
+mkfs -v -t ext4 /dev/<xxx>
+mkswap /dev/<yyy>
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+# new user skel
+
+cp ~/.bash_profile .
+cp ~/.bashrc .
+cp ~/.bash_logout .
+cp ~/.dircolors .
+cp ~/.vimrc .
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
+# this netcard needs firmware to go
+
+01:00.0 Network controller:
+Qualcomm Atheros QCA9377 802.11ac Wireless Network Adapter (rev 31)
+
+https://www.linuxfromscratch.org/blfs/view/11.2/postlfs/firmware.html
+
+
+# wpa_supplicant needs kernel support
+
+Kernel Configuration
+
+Enable the following options in the kernel configuration
+as well as specific device drivers for your hardware and
+recompile the kernel if necessary:
+
+# UEFI needs kernel support
+
+Kernel Configuration for UEFI support
+
+Enable the following options in the kernel configuration
+and recompile the kernel if necessary:
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+#meson general build command
+
+meson setup build && cd build
+meson compile
+meson test
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+# entering chroot environment
+
+mkdir -pv $LFS/{dev,proc,sys,run}
+
+
+mount -v --bind /dev $LFS/dev
+
+
+mount -v --bind /dev/pts $LFS/dev/pts
+mount -vt proc proc $LFS/proc
+mount -vt sysfs sysfs $LFS/sys
+mount -vt tmpfs tmpfs $LFS/run
+
+
+if [ -h $LFS/dev/shm ]; then
+  mkdir -pv $LFS/$(readlink $LFS/dev/shm)
+fi
+
+
+chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    /bin/bash --login
+
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+# compile linux
+
+
+# this command must be executed before compiling
+# otherwise it may cause kernel panicing
+# better remove the old directory and re-untar
+
+make mrproper
+
+# seems that config file copying and editing is ok
+make menuconfig
+make
+make modules_install
+
+
+# copy kernel
+
+cp -iv arch/x86/boot/bzImage /boot/vmlinuz-5.19.2-lfs-11.2
+cp -iv .config /boot/config-5.19.2
+
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
