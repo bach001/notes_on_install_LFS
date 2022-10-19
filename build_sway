@@ -1,9 +1,12 @@
 
 
 #1 After installation but it won't work complaining that 
+
    it could not find a primary session
    
    An apparent clue might be that loginctl command shows no sessions.
+   
+   
 
 #2 Dive into the source code 
 
@@ -11,14 +14,18 @@
    After logging in from console, elogind is responsible for managing user session, 
    Including setting XDG* environment variables.
    
+   
 #3 The issue comes from forgetting reinstalling Shadow-4.12.2 package after elogind-246.10 install 
    with Linux-PAM-1.5.2 support.
    
    This is mentioned in the instruction of Linux-PAM-1.5.2:
      **You should now reinstall the Shadow-4.12.2 package**
      
+     
 #4 After reinstall, configuring commands requires root privilege won't work
    Changing to chroot environment to do configuration.
+   
+   
    
 #5 Now, loginctl is happy and sway works.
    
