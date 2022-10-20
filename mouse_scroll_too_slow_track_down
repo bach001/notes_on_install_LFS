@@ -47,7 +47,19 @@ https://bbs.archlinux.org/viewtopic.php?id=245501
 
 # try option 2
 
+##1 compile resetmsmice from source
+    modify CMakelists.txt add a line: find_package(Iconv)
+    
+    mkdir build && cd build
+    cmake .. && make
+    run segmentation fault **awful**
+    
+##2 extract it from deb package, run ok
 
 
 
+# resort to the old way
 
+  Unplugging / replugging the Unified Receiver
+  
+  
