@@ -6,6 +6,8 @@ generally, users don't need to do specific configuration, but it seems that here
 
 #1 first of all, updated mesa https://archive.mesa3d.org//mesa-22.2.2.tar.xz
 
+https://www.linuxfromscratch.org/blfs/view/stable-systemd/x/mesa.html
+
 
 #2 it looks for i915 but Mesa-22.2.2 installation has no i965_dri.so
 
