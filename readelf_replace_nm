@@ -1,0 +1,15 @@
+
+# nm command may show no symbols maybe because symbols were stripped off
+
+# readelf -s can help
+
+  -s --syms              Display the symbol table
+     --symbols           An alias for --syms
+     --dyn-syms          Display the dynamic symbol table
+     --lto-syms          Display LTO symbol tables
+     --sym-base=[0|8|10|16] 
+                         Force base for symbol sizes.  The options are 
+                         mixed (the default), octal, decimal, hexadecimal.
+
+
+
