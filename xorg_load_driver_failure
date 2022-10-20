@@ -93,8 +93,10 @@ but all of them would still use the i915.ko kernel driver.
 in a nutshell 
 
 i915 is kernel driver, userspace side has i915_dri.so i965_dri.so crocus_dri iris_dri etc
-
-
 i965_drv_video is for VA-API that is to say hardware acceleration
+
+
+#5 Xorg.1.log shows that it finally works
+
 
 
