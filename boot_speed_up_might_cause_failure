@@ -1,0 +1,24 @@
+
+
+# toggle the following option on seems to be possible to cause net card bringing up failure
+
+# Speed up boot without waiting for settle in udev
+#OMIT_UDEV_SETTLE=y
+
+# Speed up boot without waiting for settle in udev_retry
+#OMIT_UDEV_RETRY_SETTLE=yes
+
+
+During the boot script udev, there is a call to udev settle that requires some time to complete. 
+This time may or may not be required depending on devices present in the system. 
+If you only have simple partitions and a single ethernet card, the boot process will probably not 
+need to wait for this command. To skip it, set the variable OMIT_UDEV_SETTLE=y.
+
+
+The boot script udev_retry also runs udev settle by default. This command is only needed by 
+default if the /var directory is separately mounted. This is because the clock needs the file 
+/var/lib/hwclock/adjtime. Other customizations may also need to wait for udev to complete, 
+but in many installations it is not needed. Skip the command by setting the variable OMIT_UDEV_RETRY_SETTLE=y.
+
+
+
