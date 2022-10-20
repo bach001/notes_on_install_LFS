@@ -1,0 +1,98 @@
+
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+generally, users don't need to do specific configuration, but it seems that here is an exception
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
+#1 first of all, updated mesa https://archive.mesa3d.org//mesa-22.2.2.tar.xz
+
+
+#2 it looks for i915 but Mesa-22.2.2 installation has no i965_dri.so
+
+[   563.849] (II) intel: Driver for Intel(R) HD Graphics
+[   563.849] (II) intel: Driver for Intel(R) Iris(TM) Graphics
+[   563.849] (II) intel: Driver for Intel(R) Iris(TM) Pro Graphics
+[   563.849] (II) intel(0): Using Kernel Mode Setting driver: i915, version 1.6.0 20201103
+
+
+[   563.853] (EE) AIGLX error: dlopen of /usr/local/lib/dri/i965_dri.so failed (/usr/local/lib/dri/i965_dri.so: cannot open shared object file: No such file or directory)
+[   563.853] (EE) AIGLX error: unable to load driver i965
+
+
+
+#3 after digging around for a while
+
+
+https://forums.gentoo.org/viewtopic-p-8713763.html?sid=1766cd995b223483a411e00649110da2
+
+==============================================================================================
+
+I had the same problem and the same references to Iris.
+
+
+I solved the porblem by adding in: /etc/X11/xorg.conf.d/20-intel.conf: 
+
+Code:
+
+Section "Device"
+        Identifier "Intel Graphics"
+        Driver "intel"
+        Option "AccelMethod" "sna"
+        Option "DRI" "iris"
+EndSection
+
+
+
+infomation related to configuration
+
+https://man.archlinux.org/man/intel.4#CONFIGURATION_DETAILS
+https://wiki.archlinux.org/title/Intel_graphics#Xorg_configuration
+
+==============================================================================================
+
+
+other reference
+
+https://wiki.archlinux.org/title/Xorg#Configuration
+https://man.archlinux.org/man/xorg.conf.5
+
+
+
+#4 name confusion clarification
+
+
+https://forums.gentoo.org/viewtopic-p-7049906.html
+
+=================================================================================================================
+
+The kernel DRM module for Intel GPU hardware is called i915, mainly for historical reasons. 
+Although it's called like that, it handles the entire of range of Intel GPUs (well, most of it).
+
+The userspace side is divided into i915, i965 and i915g -- the two classic mesa drivers and the gallium driver.
+
+=================================================================================================================
+
+
+https://superuser.com/questions/1704701/va-api-on-i915-hardware-in-debian
+
+
+========================================================================================
+
+For example, the Mesa project has separate DRI drivers i915_dri.so and i965_dri.so 
+(as well as crocus_dri and iris_dri) for different generations of Intel GPUs – 
+all four of those expect to talk to i915.ko on the kernel side.
+
+Same goes for VA-API; the i965_drv_video.so VA-API driver is the correct one for 
+most older Intel GPUs, while iHD_drv_video.so is for Skylake and later, 
+but all of them would still use the i915.ko kernel driver.
+
+========================================================================================
+
+in a nutshell 
+
+i915 is kernel driver, userspace side has i915_dri.so i965_dri.so crocus_dri iris_dri etc
+
+
+i965_drv_video is for VA-API that is to say hardware acceleration
+
+
