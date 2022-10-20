@@ -32,6 +32,14 @@
 [   563.947]    ABI class: X.Org XInput driver, version 24.4
 
 
+
+find /usr -name *i965*.so
+
+find: ‘/usr/share/polkit-1/rules.d’: Permission denied
+/usr/X11/lib/dri/i965_drv_video.so
+
+
+
 # the order in ld.so.conf might matter, reorder the lines, run sudo ldconfig -p
 
 # read manpage of ldconfig for more information
