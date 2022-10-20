@@ -1,5 +1,6 @@
 
-# seems to be harmless
+
+8.18. Binutils-2.39
 
 ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
@@ -16,8 +17,9 @@ FAIL: Run p_align-1d with -Wl,-z,max-page-size=0x1000 with PIE
 ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
 
-udevadm hwdb --update
 
-This command needs to be run each time the hardware information is updated.
+# this error seems to be harmless
+
+there's a report: https://bugs.debian.org/cgi-bin/pkgreport.cgi?pkg=binutils;dist=unstable
 
 
