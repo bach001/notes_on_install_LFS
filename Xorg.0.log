@@ -1,0 +1,377 @@
+[   563.819] 
+X.Org X Server 1.21.1.4
+X Protocol Version 11, Revision 0
+[   563.822] Current Operating System: Linux lfs-11.2 5.19.2 #1 SMP PREEMPT_DYNAMIC Thu Oct 6 05:36:14 CST 2022 x86_64
+[   563.822] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.19.2-lfs-11.2 root=/dev/sda5 ro
+[   563.824]  
+[   563.824] Current version of pixman: 0.40.0
+[   563.827] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[   563.827] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[   563.831] (==) Log file: "/var/log/Xorg.0.log", Time: Thu Oct 20 12:42:04 2022
+[   563.832] (==) Using config directory: "/etc/X11/xorg.conf.d"
+[   563.834] (==) Using system config directory "/usr/X11/share/X11/xorg.conf.d"
+[   563.834] (==) No Layout section.  Using the first Screen section.
+[   563.834] (==) No screen section available. Using defaults.
+[   563.834] (**) |-->Screen "Default Screen Section" (0)
+[   563.834] (**) |   |-->Monitor "<default monitor>"
+[   563.835] (==) No device specified for screen "Default Screen Section".
+	Using the first device section listed.
+[   563.835] (**) |   |-->Device "Intel Graphics"
+[   563.835] (==) No monitor specified for screen "Default Screen Section".
+	Using a default monitor configuration.
+[   563.835] (==) Automatically adding devices
+[   563.835] (==) Automatically enabling devices
+[   563.835] (==) Automatically adding GPU devices
+[   563.835] (==) Automatically binding GPU devices
+[   563.835] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[   563.835] (==) FontPath set to:
+	/usr/X11/share/fonts/X11/misc,
+	/usr/X11/share/fonts/X11/TTF,
+	/usr/X11/share/fonts/X11/OTF,
+	/usr/X11/share/fonts/X11/Type1,
+	/usr/X11/share/fonts/X11/100dpi,
+	/usr/X11/share/fonts/X11/75dpi
+[   563.835] (==) ModulePath set to "/usr/X11/lib/xorg/modules"
+[   563.835] (II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+[   563.835] (II) Module ABI versions:
+[   563.835] 	X.Org ANSI C Emulation: 0.4
+[   563.835] 	X.Org Video Driver: 25.2
+[   563.835] 	X.Org XInput driver : 24.4
+[   563.835] 	X.Org Server Extension : 10.0
+[   563.836] (++) using VT number 1
+
+[   563.838] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
+[   563.839] (II) xfree86: Adding drm device (/dev/dri/card0)
+[   563.839] (II) Platform probe for /sys/devices/pci0000:00/0000:00:02.0/drm/card0
+[   563.840] (II) systemd-logind: got fd for /dev/dri/card0 226:0 fd 10 paused 0
+[   563.842] (--) PCI:*(0@0:2:0) 8086:5917:1028:082c rev 7, Mem @ 0xde000000/16777216, 0xc0000000/268435456, I/O @ 0x0000f000/64, BIOS @ 0x????????/131072
+[   563.842] (WW) Open ACPI failed (/var/run/acpid.socket) (No such file or directory)
+[   563.842] (II) LoadModule: "glx"
+[   563.843] (II) Loading /usr/X11/lib/xorg/modules/extensions/libglx.so
+[   563.848] (II) Module glx: vendor="X.Org Foundation"
+[   563.848] 	compiled for 1.21.1.4, module version = 1.0.0
+[   563.848] 	ABI class: X.Org Server Extension, version 10.0
+[   563.848] (II) LoadModule: "intel"
+[   563.848] (II) Loading /usr/X11/lib/xorg/modules/drivers/intel_drv.so
+[   563.848] (II) Module intel: vendor="X.Org Foundation"
+[   563.848] 	compiled for 1.21.1.4, module version = 2.99.917
+[   563.848] 	Module class: X.Org Video Driver
+[   563.848] 	ABI class: X.Org Video Driver, version 25.2
+[   563.848] (II) intel: Driver for Intel(R) Integrated Graphics Chipsets:
+	i810, i810-dc100, i810e, i815, i830M, 845G, 854, 852GM/855GM, 865G,
+	915G, E7221 (i915), 915GM, 945G, 945GM, 945GME, Pineview GM,
+	Pineview G, 965G, G35, 965Q, 946GZ, 965GM, 965GME/GLE, G33, Q35, Q33,
+	GM45, 4 Series, G45/G43, Q45/Q43, G41, B43
+[   563.849] (II) intel: Driver for Intel(R) HD Graphics
+[   563.849] (II) intel: Driver for Intel(R) Iris(TM) Graphics
+[   563.849] (II) intel: Driver for Intel(R) Iris(TM) Pro Graphics
+[   563.849] (II) intel(0): Using Kernel Mode Setting driver: i915, version 1.6.0 20201103
+[   563.850] (--) intel(0): gen9 engineering sample
+[   563.850] (--) intel(0): CPU: x86-64, sse2, sse3, ssse3, sse4.1, sse4.2, avx, avx2; using a maximum of 4 threads
+[   563.850] (II) intel(0): Creating default Display subsection in Screen section
+	"Default Screen Section" for depth/fbbpp 24/32
+[   563.850] (==) intel(0): Depth 24, (--) framebuffer bpp 32
+[   563.850] (==) intel(0): RGB weight 888
+[   563.850] (==) intel(0): Default visual is TrueColor
+[   563.850] (II) intel(0): Output eDP1 has no monitor section
+[   563.851] (**) intel(0): Found backlight control interface intel_backlight (type 'raw') for output eDP1
+[   563.851] (II) intel(0): Enabled output eDP1
+[   563.851] (II) intel(0): Output HDMI1 has no monitor section
+[   563.851] (II) intel(0): Enabled output HDMI1
+[   563.851] (II) intel(0): Output DP1 has no monitor section
+[   563.851] (II) intel(0): Enabled output DP1
+[   563.851] (II) intel(0): Output HDMI2 has no monitor section
+[   563.851] (II) intel(0): Enabled output HDMI2
+[   563.851] (--) intel(0): Using a maximum size of 256x256 for hardware cursors
+[   563.852] (II) intel(0): Output VIRTUAL1 has no monitor section
+[   563.852] (II) intel(0): Enabled output VIRTUAL1
+[   563.852] (--) intel(0): Output eDP1 using initial mode 1920x1080 on pipe 0
+[   563.852] (--) intel(0): Output HDMI1 using initial mode 1920x1080 on pipe 1
+[   563.852] (==) intel(0): TearFree enabled
+[   563.852] (==) intel(0): Using gamma correction (1.0, 1.0, 1.0)
+[   563.852] (==) intel(0): DPI set to (96, 96)
+[   563.852] (II) Loading sub module "dri3"
+[   563.852] (II) LoadModule: "dri3"
+[   563.852] (II) Module "dri3" already built-in
+[   563.852] (II) Loading sub module "dri2"
+[   563.852] (II) LoadModule: "dri2"
+[   563.852] (II) Module "dri2" already built-in
+[   563.852] (II) Loading sub module "present"
+[   563.852] (II) LoadModule: "present"
+[   563.852] (II) Module "present" already built-in
+[   563.852] (II) intel(0): SNA initialized with Kabylake (gen9) backend
+[   563.852] (==) intel(0): Backing store enabled
+[   563.852] (==) intel(0): Silken mouse enabled
+[   563.852] (II) intel(0): HW Cursor enabled
+[   563.852] (==) intel(0): DPMS enabled
+[   563.852] (==) intel(0): Display hotplug detection enabled
+[   563.852] (II) intel(0): [DRI2] Setup complete
+[   563.853] (II) intel(0): [DRI2]   DRI driver: i965
+[   563.853] (II) intel(0): [DRI2]   VDPAU driver: va_gl
+[   563.853] (II) intel(0): direct rendering: DRI2 enabled
+[   563.853] (II) intel(0): hardware support for Present enabled
+[   563.853] (II) Initializing extension Generic Event Extension
+[   563.853] (II) Initializing extension SHAPE
+[   563.853] (II) Initializing extension MIT-SHM
+[   563.853] (II) Initializing extension XInputExtension
+[   563.853] (II) Initializing extension XTEST
+[   563.853] (II) Initializing extension BIG-REQUESTS
+[   563.853] (II) Initializing extension SYNC
+[   563.853] (II) Initializing extension XKEYBOARD
+[   563.853] (II) Initializing extension XC-MISC
+[   563.853] (II) Initializing extension XFIXES
+[   563.853] (II) Initializing extension RENDER
+[   563.853] (II) Initializing extension RANDR
+[   563.853] (II) Initializing extension COMPOSITE
+[   563.853] (II) Initializing extension DAMAGE
+[   563.853] (II) Initializing extension MIT-SCREEN-SAVER
+[   563.853] (II) Initializing extension DOUBLE-BUFFER
+[   563.853] (II) Initializing extension RECORD
+[   563.853] (II) Initializing extension DPMS
+[   563.853] (II) Initializing extension Present
+[   563.853] (II) Initializing extension DRI3
+[   563.853] (II) Initializing extension X-Resource
+[   563.853] (II) Initializing extension XVideo
+[   563.853] (II) Initializing extension XVideo-MotionCompensation
+[   563.853] (II) Initializing extension GLX
+[   563.853] (EE) AIGLX error: dlopen of /usr/local/lib/dri/i965_dri.so failed (/usr/local/lib/dri/i965_dri.so: cannot open shared object file: No such file or directory)
+[   563.853] (EE) AIGLX error: unable to load driver i965
+[   563.874] (II) IGLX: Loaded and initialized swrast
+[   563.874] (II) GLX: Initialized DRISWRAST GL provider for screen 0
+[   563.874] (II) Initializing extension XFree86-VidModeExtension
+[   563.874] (II) Initializing extension XFree86-DGA
+[   563.874] (II) Initializing extension XFree86-DRI
+[   563.874] (II) Initializing extension DRI2
+[   563.877] (II) intel(0): switch to mode 1920x1080@60.0 on eDP1 using pipe 0, position (0, 0), rotation normal, reflection none
+[   563.893] (II) intel(0): switch to mode 1920x1080@60.0 on HDMI1 using pipe 1, position (0, 0), rotation normal, reflection none
+[   563.897] (II) intel(0): Setting screen physical size to 508 x 285
+[   563.942] (II) config/udev: Adding input device Power Button (/dev/input/event3)
+[   563.942] (**) Power Button: Applying InputClass "evdev keyboard catchall"
+[   563.942] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[   563.942] (II) LoadModule: "libinput"
+[   563.943] (II) Loading /usr/X11/lib/xorg/modules/input/libinput_drv.so
+[   563.947] (II) Module libinput: vendor="X.Org Foundation"
+[   563.947] 	compiled for 1.21.1.4, module version = 1.2.1
+[   563.947] 	Module class: X.Org XInput Driver
+[   563.947] 	ABI class: X.Org XInput driver, version 24.4
+[   563.947] (II) Using input driver 'libinput' for 'Power Button'
+[   563.947] (II) systemd-logind: got fd for /dev/input/event3 13:67 fd 23 paused 0
+[   563.947] (**) Power Button: always reports core events
+[   563.947] (**) Option "Device" "/dev/input/event3"
+[   563.961] (II) event3  - Power Button: is tagged by udev as: Keyboard
+[   563.961] (II) event3  - Power Button: device is a keyboard
+[   563.961] (II) event3  - Power Button: device removed
+[   563.961] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input3/event3"
+[   563.961] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 6)
+[   563.962] (II) event3  - Power Button: is tagged by udev as: Keyboard
+[   563.962] (II) event3  - Power Button: device is a keyboard
+[   563.962] (II) config/udev: Adding input device Video Bus (/dev/input/event4)
+[   563.962] (**) Video Bus: Applying InputClass "evdev keyboard catchall"
+[   563.962] (**) Video Bus: Applying InputClass "libinput keyboard catchall"
+[   563.962] (II) Using input driver 'libinput' for 'Video Bus'
+[   563.963] (II) systemd-logind: got fd for /dev/input/event4 13:68 fd 26 paused 0
+[   563.963] (**) Video Bus: always reports core events
+[   563.963] (**) Option "Device" "/dev/input/event4"
+[   563.963] (II) event4  - Video Bus: is tagged by udev as: Keyboard
+[   563.963] (II) event4  - Video Bus: device is a keyboard
+[   563.963] (II) event4  - Video Bus: device removed
+[   563.963] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:00/input/input4/event4"
+[   563.963] (II) XINPUT: Adding extended input device "Video Bus" (type: KEYBOARD, id 7)
+[   563.964] (II) event4  - Video Bus: is tagged by udev as: Keyboard
+[   563.964] (II) event4  - Video Bus: device is a keyboard
+[   563.964] (II) config/udev: Adding input device Power Button (/dev/input/event1)
+[   563.964] (**) Power Button: Applying InputClass "evdev keyboard catchall"
+[   563.964] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[   563.964] (II) Using input driver 'libinput' for 'Power Button'
+[   563.965] (II) systemd-logind: got fd for /dev/input/event1 13:65 fd 27 paused 0
+[   563.965] (**) Power Button: always reports core events
+[   563.965] (**) Option "Device" "/dev/input/event1"
+[   563.965] (II) event1  - Power Button: is tagged by udev as: Keyboard
+[   563.965] (II) event1  - Power Button: device is a keyboard
+[   563.965] (II) event1  - Power Button: device removed
+[   563.965] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input1/event1"
+[   563.965] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 8)
+[   563.966] (II) event1  - Power Button: is tagged by udev as: Keyboard
+[   563.966] (II) event1  - Power Button: device is a keyboard
+[   563.966] (II) config/udev: Adding input device Lid Switch (/dev/input/event0)
+[   563.966] (II) No input driver specified, ignoring this device.
+[   563.966] (II) This device may have been added with another device file.
+[   563.966] (II) config/udev: Adding input device Sleep Button (/dev/input/event2)
+[   563.966] (**) Sleep Button: Applying InputClass "evdev keyboard catchall"
+[   563.966] (**) Sleep Button: Applying InputClass "libinput keyboard catchall"
+[   563.966] (II) Using input driver 'libinput' for 'Sleep Button'
+[   563.967] (II) systemd-logind: got fd for /dev/input/event2 13:66 fd 28 paused 0
+[   563.967] (**) Sleep Button: always reports core events
+[   563.967] (**) Option "Device" "/dev/input/event2"
+[   563.967] (II) event2  - Sleep Button: is tagged by udev as: Keyboard
+[   563.967] (II) event2  - Sleep Button: device is a keyboard
+[   563.968] (II) event2  - Sleep Button: device removed
+[   563.968] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0E:00/input/input2/event2"
+[   563.968] (II) XINPUT: Adding extended input device "Sleep Button" (type: KEYBOARD, id 9)
+[   563.968] (II) event2  - Sleep Button: is tagged by udev as: Keyboard
+[   563.968] (II) event2  - Sleep Button: device is a keyboard
+[   563.969] (II) config/udev: Adding input device Microsoft Microsoft® 2.4GHz Transceiver v9.0 (/dev/input/event6)
+[   563.969] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0: Applying InputClass "evdev keyboard catchall"
+[   563.969] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0: Applying InputClass "libinput keyboard catchall"
+[   563.969] (II) Using input driver 'libinput' for 'Microsoft Microsoft® 2.4GHz Transceiver v9.0'
+[   563.969] (II) systemd-logind: got fd for /dev/input/event6 13:70 fd 29 paused 0
+[   563.969] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0: always reports core events
+[   563.969] (**) Option "Device" "/dev/input/event6"
+[   563.970] (II) event6  - Microsoft Microsoft® 2.4GHz Transceiver v9.0: is tagged by udev as: Keyboard
+[   563.970] (II) event6  - Microsoft Microsoft® 2.4GHz Transceiver v9.0: device is a keyboard
+[   563.970] (II) event6  - Microsoft Microsoft® 2.4GHz Transceiver v9.0: device removed
+[   563.970] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4:1.0/0003:045E:07A5.0001/input/input8/event6"
+[   563.970] (II) XINPUT: Adding extended input device "Microsoft Microsoft® 2.4GHz Transceiver v9.0" (type: KEYBOARD, id 10)
+[   563.971] (II) event6  - Microsoft Microsoft® 2.4GHz Transceiver v9.0: is tagged by udev as: Keyboard
+[   563.971] (II) event6  - Microsoft Microsoft® 2.4GHz Transceiver v9.0: device is a keyboard
+[   563.971] (II) config/udev: Adding input device Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control (/dev/input/event8)
+[   563.971] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: Applying InputClass "evdev keyboard catchall"
+[   563.971] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: Applying InputClass "libinput keyboard catchall"
+[   563.971] (II) Using input driver 'libinput' for 'Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control'
+[   564.025] (II) systemd-logind: got fd for /dev/input/event8 13:72 fd 30 paused 0
+[   564.025] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: always reports core events
+[   564.025] (**) Option "Device" "/dev/input/event8"
+[   564.025] (II) event8  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: is tagged by udev as: Keyboard
+[   564.025] (II) event8  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: device is a keyboard
+[   564.025] (II) event8  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: device removed
+[   564.025] (II) libinput: Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: needs a virtual subdevice
+[   564.025] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4:1.1/0003:045E:07A5.0002/input/input10/event8"
+[   564.025] (II) XINPUT: Adding extended input device "Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control" (type: MOUSE, id 11)
+[   564.025] (**) Option "AccelerationScheme" "none"
+[   564.025] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: (accel) selected scheme none/0
+[   564.025] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: (accel) acceleration factor: 2.000
+[   564.025] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: (accel) acceleration threshold: 4
+[   564.026] (II) event8  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: is tagged by udev as: Keyboard
+[   564.026] (II) event8  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: device is a keyboard
+[   564.027] (II) config/udev: Adding input device Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse (/dev/input/event7)
+[   564.027] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: Applying InputClass "evdev pointer catchall"
+[   564.027] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: Applying InputClass "libinput pointer catchall"
+[   564.027] (II) Using input driver 'libinput' for 'Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse'
+[   564.028] (II) systemd-logind: got fd for /dev/input/event7 13:71 fd 31 paused 0
+[   564.028] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: always reports core events
+[   564.028] (**) Option "Device" "/dev/input/event7"
+[   564.028] (II) event7  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: is tagged by udev as: Mouse
+[   564.029] (II) event7  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: device is a pointer
+[   564.029] (II) event7  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: device removed
+[   564.029] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4:1.1/0003:045E:07A5.0002/input/input9/event7"
+[   564.029] (II) XINPUT: Adding extended input device "Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse" (type: MOUSE, id 12)
+[   564.029] (**) Option "AccelerationScheme" "none"
+[   564.029] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: (accel) selected scheme none/0
+[   564.029] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: (accel) acceleration factor: 2.000
+[   564.029] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: (accel) acceleration threshold: 4
+[   564.030] (II) event7  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: is tagged by udev as: Mouse
+[   564.030] (II) event7  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Mouse: device is a pointer
+[   564.031] (II) config/udev: Adding input device Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control (/dev/input/event9)
+[   564.031] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: Applying InputClass "evdev keyboard catchall"
+[   564.031] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: Applying InputClass "libinput keyboard catchall"
+[   564.031] (II) Using input driver 'libinput' for 'Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control'
+[   564.032] (II) systemd-logind: got fd for /dev/input/event9 13:73 fd 32 paused 0
+[   564.032] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: always reports core events
+[   564.032] (**) Option "Device" "/dev/input/event9"
+[   564.033] (II) event9  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: is tagged by udev as: Keyboard
+[   564.033] (II) event9  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: device is a keyboard
+[   564.033] (II) event9  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: device removed
+[   564.033] (II) libinput: Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: needs a virtual subdevice
+[   564.033] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4:1.2/0003:045E:07A5.0003/input/input11/event9"
+[   564.033] (II) XINPUT: Adding extended input device "Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control" (type: MOUSE, id 13)
+[   564.033] (**) Option "AccelerationScheme" "none"
+[   564.033] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: (accel) selected scheme none/0
+[   564.033] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: (accel) acceleration factor: 2.000
+[   564.033] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: (accel) acceleration threshold: 4
+[   564.034] (II) event9  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: is tagged by udev as: Keyboard
+[   564.035] (II) event9  - Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: device is a keyboard
+[   564.035] (II) config/udev: Adding input device Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control (/dev/input/event10)
+[   564.035] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control: Applying InputClass "evdev keyboard catchall"
+[   564.035] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control: Applying InputClass "libinput keyboard catchall"
+[   564.035] (II) Using input driver 'libinput' for 'Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control'
+[   564.036] (II) systemd-logind: got fd for /dev/input/event10 13:74 fd 33 paused 0
+[   564.036] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control: always reports core events
+[   564.036] (**) Option "Device" "/dev/input/event10"
+[   564.037] (II) event10 - Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control: is tagged by udev as: Keyboard
+[   564.037] (II) event10 - Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control: device is a keyboard
+[   564.038] (II) event10 - Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control: device removed
+[   564.038] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4:1.2/0003:045E:07A5.0003/input/input12/event10"
+[   564.038] (II) XINPUT: Adding extended input device "Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control" (type: KEYBOARD, id 14)
+[   564.039] (II) event10 - Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control: is tagged by udev as: Keyboard
+[   564.039] (II) event10 - Microsoft Microsoft® 2.4GHz Transceiver v9.0 System Control: device is a keyboard
+[   564.039] (II) config/udev: Adding input device HDA Intel PCH Headphone Mic (/dev/input/event12)
+[   564.039] (II) No input driver specified, ignoring this device.
+[   564.039] (II) This device may have been added with another device file.
+[   564.040] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=3 (/dev/input/event13)
+[   564.040] (II) No input driver specified, ignoring this device.
+[   564.040] (II) This device may have been added with another device file.
+[   564.040] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=7 (/dev/input/event14)
+[   564.040] (II) No input driver specified, ignoring this device.
+[   564.040] (II) This device may have been added with another device file.
+[   564.040] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=8 (/dev/input/event15)
+[   564.040] (II) No input driver specified, ignoring this device.
+[   564.040] (II) This device may have been added with another device file.
+[   564.040] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=9 (/dev/input/event16)
+[   564.041] (II) No input driver specified, ignoring this device.
+[   564.041] (II) This device may have been added with another device file.
+[   564.041] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=10 (/dev/input/event17)
+[   564.041] (II) No input driver specified, ignoring this device.
+[   564.041] (II) This device may have been added with another device file.
+[   564.041] (II) config/udev: Adding input device AT Translated Set 2 keyboard (/dev/input/event5)
+[   564.041] (**) AT Translated Set 2 keyboard: Applying InputClass "evdev keyboard catchall"
+[   564.041] (**) AT Translated Set 2 keyboard: Applying InputClass "libinput keyboard catchall"
+[   564.041] (II) Using input driver 'libinput' for 'AT Translated Set 2 keyboard'
+[   564.042] (II) systemd-logind: got fd for /dev/input/event5 13:69 fd 34 paused 0
+[   564.042] (**) AT Translated Set 2 keyboard: always reports core events
+[   564.042] (**) Option "Device" "/dev/input/event5"
+[   564.043] (II) event5  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[   564.043] (II) event5  - AT Translated Set 2 keyboard: device is a keyboard
+[   564.044] (II) event5  - AT Translated Set 2 keyboard: device removed
+[   564.044] (**) Option "config_info" "udev:/sys/devices/platform/i8042/serio0/input/input5/event5"
+[   564.044] (II) XINPUT: Adding extended input device "AT Translated Set 2 keyboard" (type: KEYBOARD, id 15)
+[   564.045] (II) event5  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[   564.045] (II) event5  - AT Translated Set 2 keyboard: device is a keyboard
+[   564.046] (II) config/udev: Adding input device SynPS/2 Synaptics TouchPad (/dev/input/event11)
+[   564.046] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "evdev touchpad catchall"
+[   564.046] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "libinput touchpad catchall"
+[   564.046] (II) Using input driver 'libinput' for 'SynPS/2 Synaptics TouchPad'
+[   564.047] (II) systemd-logind: got fd for /dev/input/event11 13:75 fd 35 paused 0
+[   564.047] (**) SynPS/2 Synaptics TouchPad: always reports core events
+[   564.047] (**) Option "Device" "/dev/input/event11"
+[   564.048] (II) event11 - SynPS/2 Synaptics TouchPad: is tagged by udev as: Touchpad
+[   564.049] (II) event11 - SynPS/2 Synaptics TouchPad: no resolution or size hints, assuming a size of 69x50mm
+[   564.050] (II) event11 - SynPS/2 Synaptics TouchPad: device is a touchpad
+[   564.050] (II) event11 - SynPS/2 Synaptics TouchPad: device removed
+[   564.051] (**) Option "config_info" "udev:/sys/devices/platform/i8042/serio1/input/input7/event11"
+[   564.051] (II) XINPUT: Adding extended input device "SynPS/2 Synaptics TouchPad" (type: TOUCHPAD, id 16)
+[   564.052] (**) Option "AccelerationScheme" "none"
+[   564.052] (**) SynPS/2 Synaptics TouchPad: (accel) selected scheme none/0
+[   564.052] (**) SynPS/2 Synaptics TouchPad: (accel) acceleration factor: 2.000
+[   564.052] (**) SynPS/2 Synaptics TouchPad: (accel) acceleration threshold: 4
+[   564.053] (II) event11 - SynPS/2 Synaptics TouchPad: is tagged by udev as: Touchpad
+[   564.054] (II) event11 - SynPS/2 Synaptics TouchPad: no resolution or size hints, assuming a size of 69x50mm
+[   564.055] (II) event11 - SynPS/2 Synaptics TouchPad: device is a touchpad
+[   564.081] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: Applying InputClass "evdev keyboard catchall"
+[   564.081] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: Applying InputClass "libinput keyboard catchall"
+[   564.081] (II) Using input driver 'libinput' for 'Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control'
+[   564.081] (II) systemd-logind: returning pre-existing fd for /dev/input/event8 13:72
+[   564.081] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: always reports core events
+[   564.081] (**) Option "Device" "/dev/input/event8"
+[   564.081] (II) libinput: Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: is a virtual subdevice
+[   564.081] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4:1.1/0003:045E:07A5.0002/input/input10/event8"
+[   564.081] (II) XINPUT: Adding extended input device "Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control" (type: KEYBOARD, id 17)
+[   564.081] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: Applying InputClass "evdev keyboard catchall"
+[   564.081] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: Applying InputClass "libinput keyboard catchall"
+[   564.081] (II) Using input driver 'libinput' for 'Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control'
+[   564.081] (II) systemd-logind: returning pre-existing fd for /dev/input/event9 13:73
+[   564.081] (**) Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: always reports core events
+[   564.081] (**) Option "Device" "/dev/input/event9"
+[   564.081] (II) libinput: Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control: is a virtual subdevice
+[   564.081] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4:1.2/0003:045E:07A5.0003/input/input11/event9"
+[   564.081] (II) XINPUT: Adding extended input device "Microsoft Microsoft® 2.4GHz Transceiver v9.0 Consumer Control" (type: KEYBOARD, id 18)
+[   564.259] (II) intel(0): resizing framebuffer to 3840x1080
+[   564.280] (II) intel(0): switch to mode 1920x1080@60.0 on eDP1 using pipe 0, position (1920, 0), rotation normal, reflection none
+[   565.853] (II) intel(0): EDID vendor "LGD", prod id 1185
+[   565.853] (II) intel(0): Printing DDC gathered Modelines:
+[   565.853] (II) intel(0): Modeline "1920x1080"x0.0  138.70  1920 1968 2000 2080  1080 1083 1088 1111 +hsync -vsync (66.7 kHz eP)
+[   565.853] (II) intel(0): Modeline "1920x1080"x0.0  111.00  1920 1968 2000 2080  1080 1083 1088 1111 +hsync -vsync (53.4 kHz e)
+[   566.281] (--) intel(0): HDMI max TMDS frequency 165000KHz
