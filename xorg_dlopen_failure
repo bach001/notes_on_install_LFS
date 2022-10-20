@@ -1,0 +1,40 @@
+
+
+[   563.853] (II) Initializing extension MIT-SCREEN-SAVER
+[   563.853] (II) Initializing extension DOUBLE-BUFFER
+[   563.853] (II) Initializing extension RECORD
+[   563.853] (II) Initializing extension DPMS
+[   563.853] (II) Initializing extension Present
+[   563.853] (II) Initializing extension DRI3
+[   563.853] (II) Initializing extension X-Resource
+[   563.853] (II) Initializing extension XVideo
+[   563.853] (II) Initializing extension XVideo-MotionCompensation
+[   563.853] (II) Initializing extension GLX
+[   563.853] (EE) AIGLX error: dlopen of /usr/local/lib/dri/i965_dri.so failed (/usr/local/lib/dri/i965_dri.so: cannot open shared object file: No such file or directory)
+[   563.853] (EE) AIGLX error: unable to load driver i965
+[   563.874] (II) IGLX: Loaded and initialized swrast
+[   563.874] (II) GLX: Initialized DRISWRAST GL provider for screen 0
+[   563.874] (II) Initializing extension XFree86-VidModeExtension
+[   563.874] (II) Initializing extension XFree86-DGA
+[   563.874] (II) Initializing extension XFree86-DRI
+[   563.874] (II) Initializing extension DRI2
+[   563.877] (II) intel(0): switch to mode 1920x1080@60.0 on eDP1 using pipe 0, position (0, 0), rotation normal, reflection none
+[   563.893] (II) intel(0): switch to mode 1920x1080@60.0 on HDMI1 using pipe 1, position (0, 0), rotation normal, reflection none
+[   563.897] (II) intel(0): Setting screen physical size to 508 x 285
+[   563.942] (II) config/udev: Adding input device Power Button (/dev/input/event3)
+[   563.942] (**) Power Button: Applying InputClass "evdev keyboard catchall"
+[   563.942] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[   563.942] (II) LoadModule: "libinput"
+[   563.943] (II) Loading /usr/X11/lib/xorg/modules/input/libinput_drv.so
+[   563.947] (II) Module libinput: vendor="X.Org Foundation"
+[   563.947]    compiled for 1.21.1.4, module version = 1.2.1
+[   563.947]    Module class: X.Org XInput Driver
+[   563.947]    ABI class: X.Org XInput driver, version 24.4
+
+
+# the order in ld.so.conf might matter, reorder the lines, run sudo ldconfig -p
+
+# read manpage of ldconfig for more information
+
+
+
