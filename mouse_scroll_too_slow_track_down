@@ -52,10 +52,13 @@ https://bbs.archlinux.org/viewtopic.php?id=245501
     
     mkdir build && cd build
     cmake .. && make
-    run segmentation fault **awful**
+    run segmentation fault 
     
-##2 extract it from deb package, run ok
+=========================
+    **awful**
+=========================
 
+##2 extract it from deb package, run ok
 
 
 # resort to the old way
