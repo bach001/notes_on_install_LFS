@@ -1,21 +1,274 @@
 
 # polybar can't find sphinx-build
 
-pip3 install default location to .local 
+pip3 install sphinx default location to .local 
 
 temporarily do this: export PATH=$PATH:$HOME/.local/bin
 
 
 
+
 # polybar install script search for xcbgen fail
 
-
-# xcb_proto install xcbgen at: $XORG_PREFIX/lib/python3.10/site-packages/xcbgen
+xcb_proto install xcbgen at: $XORG_PREFIX/lib/python3.10/site-packages/xcbgen
 
 https://www.linuxfromscratch.org/blfs/view/svn/x/xcb-proto.html
 
+==========================================================================
+set PYTHONPATH=$PYTHONPATH:$XORG_PREFIX/lib/python3.10/site-packages/
+==========================================================================
 
-# set PYTHONPATH=$PYTHONPATH:$$XORG_PREFIX/lib/python3.10/site-packages/
 
 make it could be found
+
+
+
+
+# install optional jsoncpp and libnl
+
+jsoncpp default to /usr/local/lib64
+
+==========================================================================
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig/
+==========================================================================
+
+install libnl: https://www.linuxfromscratch.org/blfs/view/svn/basicnet/libnl.html
+
+
+
+# if there are multiple site-packages, the first take precedence, 
+  thus it might hide modules in other site-packages
+
+
+# disable build documentation
+
+edit CMakeLists.txt
+
+#if(BUILD_DOC)
+#  add_subdirectory(doc)
+#endif()
+
+
+
+
+sh build.sh 
+
+** A build dir already exists (pass -f to replace)
+
+** Setting build options
+
+** Use GCC even if Clang is installed ----------------------------- [y/N]: y
+** Include support for "internal/i3" (requires i3) ---------------- [y/N]: y
+** Include support for "internal/alsa" (requires alsalib) --------- [y/N]: y
+** Include support for "internal/pulseaudio" (requires libpulse) -- [y/N]: y
+** Include support for "internal/network" (requires libnl/libiw) -- [y/N]: y
+** Include support for "internal/mpd" (requires libmpdclient) ----- [y/N]: 
+
+** Include support for "internal/github" (requires libcurl) ------- [y/N]: y
+** Build "polybar-msg" used to send ipc messages ------------------ [y/N]: y
+** Parallelize the build using make -j8 --------------------------- [y/N]: y
+** Executing cmake command
+
+-- No build type specified; using Release
+-- Couldn't locate ccache, disabling ccache...
+-- Using supported compiler GNU-12.2.0
+-- XCB[XCB]: Found component XCB
+-- XCB[ICCCM]: Found component ICCCM
+-- XCB[EWMH]: Found component EWMH
+-- XCB[UTIL]: Found component UTIL
+-- XCB[IMAGE]: Found component IMAGE
+-- Found XCB: /usr/X11/lib/libxcb.so;/usr/X11/lib/libxcb-icccm.so;/usr/X11/lib/libxcb-ewmh.so;/usr/X11/lib/libxcb-util.so;/usr/X11/lib/libxcb-image.so  
+-- Searching for xcbgen with /usr/bin/python3
+-- Found xcbgen in /usr/X11/lib/python3.10/site-packages
+-- XCB[RANDR]: Found component RANDR
+-- Found XCB: /usr/X11/lib/libxcb.so;/usr/X11/lib/libxcb-icccm.so;/usr/X11/lib/libxcb-ewmh.so;/usr/X11/lib/libxcb-util.so;/usr/X11/lib/libxcb-image.so;/usr/X11/lib/libxcb-randr.so  
+-- XCB[COMPOSITE]: Found component COMPOSITE
+-- Found XCB: /usr/X11/lib/libxcb.so;/usr/X11/lib/libxcb-icccm.so;/usr/X11/lib/libxcb-ewmh.so;/usr/X11/lib/libxcb-util.so;/usr/X11/lib/libxcb-image.so;/usr/X11/lib/libxcb-randr.so;/usr/X11/lib/libxcb-composite.so  
+-- XCB[XKB]: Found component XKB
+-- Found XCB: /usr/X11/lib/libxcb.so;/usr/X11/lib/libxcb-icccm.so;/usr/X11/lib/libxcb-ewmh.so;/usr/X11/lib/libxcb-util.so;/usr/X11/lib/libxcb-image.so;/usr/X11/lib/libxcb-randr.so;/usr/X11/lib/libxcb-composite.so;/usr/X11/lib/libxcb-xkb.so  
+-- xpp: including xcb proto composite.xml
+-- xpp: including xcb proto randr.xml
+-- xpp: including xcb proto xkb.xml
+-- xpp: including xcb proto xproto.xml
+-- Checking for module 'jsoncpp'
+--   Found jsoncpp, version 1.9.4
+--  Build:
+--    Version: 2.26.4660.102-350-ge70d0a0f-dev
+--    Type: Release
+--    CXX: /usr/bin/g++  -O3 -DNDEBUG -Wall -Wextra -Wpedantic -Wsuggest-override
+--    LD: /usr/bin/ld  -Wall -Wextra -Wpedantic -Wsuggest-override  -Wall -Wextra -Wpedantic -Wsuggest-override
+--    sphinx-build:  
+--  Install Paths:
+--    PREFIX:  /usr/local
+--    BINDIR:  /usr/local/bin
+--    DATADIR: /usr/local/share
+--    DOCDIR:  /usr/local/share/doc/polybar
+--    MANDIR:  /usr/local/share/man
+--  Targets:
+-- [X]   polybar
+-- [X]   polybar-msg
+-- [ ]   testsuite
+-- [X]   documentation
+-- [X]      html
+-- [X]      man
+-- [X]   default config
+-- [X]   shell files
+--  Module support:
+-- [X]   alsa (1.2.7.2)
+-- [X]   curl (7.84.0)
+-- [X]   i3
+-- [ ]   mpd
+-- [X]   network (libnl) (3.7.0)
+-- [X]   pulseaudio (16.1)
+-- [X]   xkeyboard (1.15)
+--  X extensions:
+-- [X]   xcb-randr (1.15)
+-- [X]   xcb-randr (monitor support) (1.15)
+-- [X]   xcb-composite (1.15)
+-- [X]   xcb-xkb (1.15)
+-- [X]   xcb-xrm (1.3)
+-- [X]   xcb-cursor (0.1.3)
+--  Log options:
+-- [X]   Trace logging
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/labia/libs/polybar-3.6.3/build
+** Building project
+
+[  1%] Generating generated-sources/include/xpp/proto/xkb.hpp
+[  2%] Generating generated-sources/include/xpp/proto/composite.hpp
+[  3%] Generating generated-sources/include/xpp/proto/randr.hpp
+[  4%] Generating generated-sources/include/xpp/proto/x.hpp
+[  5%] Building CXX object lib/i3ipcpp/CMakeFiles/i3ipc++.dir/src/ipc.cpp.o
+[  5%] Building CXX object lib/i3ipcpp/CMakeFiles/i3ipc++.dir/src/ipc-util.cpp.o
+list: size, ['red', 'green', 'blue']
+list: size, ['red', 'green', 'blue']
+[  6%] Linking CXX static library libi3ipc++.a
+[  6%] Built target i3ipc++
+[  7%] Linking CXX static library libxpp.a
+[  7%] Built target xpp
+[ 10%] Building CXX object bin/CMakeFiles/poly.dir/adapters/script_runner.cpp.o
+[ 11%] Building CXX object bin/CMakeFiles/poly.dir/components/bar.cpp.o
+[ 12%] Building CXX object bin/CMakeFiles/poly.dir/components/builder.cpp.o
+[ 10%] Building CXX object bin/CMakeFiles/poly.dir/cairo/utils.cpp.o
+[ 13%] Building CXX object bin/CMakeFiles/poly.dir/components/command_line.cpp.o
+[ 10%] Building CXX object bin/CMakeFiles/poly.dir/__/generated-sources/settings.cpp.o
+[ 14%] Building CXX object bin/CMakeFiles/poly.dir/components/config.cpp.o
+[ 15%] Building CXX object bin/CMakeFiles/poly.dir/components/config_parser.cpp.o
+[ 16%] Building CXX object bin/CMakeFiles/poly.dir/components/controller.cpp.o
+[ 17%] Building CXX object bin/CMakeFiles/poly.dir/components/logger.cpp.o
+[ 18%] Building CXX object bin/CMakeFiles/poly.dir/components/renderer.cpp.o
+[ 19%] Building CXX object bin/CMakeFiles/poly.dir/components/screen.cpp.o
+[ 20%] Building CXX object bin/CMakeFiles/poly.dir/components/eventloop.cpp.o
+[ 21%] Building CXX object bin/CMakeFiles/poly.dir/drawtypes/animation.cpp.o
+[ 22%] Building CXX object bin/CMakeFiles/poly.dir/drawtypes/iconset.cpp.o
+[ 23%] Building CXX object bin/CMakeFiles/poly.dir/drawtypes/layouticonset.cpp.o
+[ 24%] Building CXX object bin/CMakeFiles/poly.dir/drawtypes/label.cpp.o
+[ 25%] Building CXX object bin/CMakeFiles/poly.dir/drawtypes/progressbar.cpp.o
+[ 26%] Building CXX object bin/CMakeFiles/poly.dir/drawtypes/ramp.cpp.o
+[ 27%] Building CXX object bin/CMakeFiles/poly.dir/events/signal_emitter.cpp.o
+[ 28%] Building CXX object bin/CMakeFiles/poly.dir/events/signal_receiver.cpp.o
+[ 29%] Building CXX object bin/CMakeFiles/poly.dir/ipc/ipc.cpp.o
+[ 30%] Building CXX object bin/CMakeFiles/poly.dir/ipc/decoder.cpp.o
+[ 30%] Building CXX object bin/CMakeFiles/poly.dir/ipc/encoder.cpp.o
+[ 31%] Building CXX object bin/CMakeFiles/poly.dir/ipc/util.cpp.o
+[ 32%] Building CXX object bin/CMakeFiles/poly.dir/modules/backlight.cpp.o
+[ 33%] Building CXX object bin/CMakeFiles/poly.dir/modules/battery.cpp.o
+[ 34%] Building CXX object bin/CMakeFiles/poly.dir/modules/bspwm.cpp.o
+[ 35%] Building CXX object bin/CMakeFiles/poly.dir/modules/counter.cpp.o
+[ 36%] Building CXX object bin/CMakeFiles/poly.dir/modules/cpu.cpp.o
+[ 37%] Building CXX object bin/CMakeFiles/poly.dir/modules/date.cpp.o
+[ 38%] Building CXX object bin/CMakeFiles/poly.dir/modules/fs.cpp.o
+[ 39%] Building CXX object bin/CMakeFiles/poly.dir/modules/ipc.cpp.o
+[ 40%] Building CXX object bin/CMakeFiles/poly.dir/modules/memory.cpp.o
+[ 41%] Building CXX object bin/CMakeFiles/poly.dir/modules/menu.cpp.o
+[ 42%] Building CXX object bin/CMakeFiles/poly.dir/modules/meta/base.cpp.o
+[ 43%] Building CXX object bin/CMakeFiles/poly.dir/modules/script.cpp.o
+[ 44%] Building CXX object bin/CMakeFiles/poly.dir/modules/systray.cpp.o
+[ 45%] Building CXX object bin/CMakeFiles/poly.dir/modules/temperature.cpp.o
+[ 46%] Building CXX object bin/CMakeFiles/poly.dir/modules/text.cpp.o
+[ 47%] Building CXX object bin/CMakeFiles/poly.dir/modules/xbacklight.cpp.o
+[ 48%] Building CXX object bin/CMakeFiles/poly.dir/modules/xwindow.cpp.o
+[ 49%] Building CXX object bin/CMakeFiles/poly.dir/modules/xworkspaces.cpp.o
+[ 50%] Building CXX object bin/CMakeFiles/poly.dir/tags/action_context.cpp.o
+[ 51%] Building CXX object bin/CMakeFiles/poly.dir/tags/context.cpp.o
+[ 52%] Building CXX object bin/CMakeFiles/poly.dir/tags/dispatch.cpp.o
+[ 53%] Building CXX object bin/CMakeFiles/poly.dir/tags/parser.cpp.o
+[ 54%] Building CXX object bin/CMakeFiles/poly.dir/utils/actions.cpp.o
+[ 55%] Building CXX object bin/CMakeFiles/poly.dir/utils/action_router.cpp.o
+[ 55%] Building CXX object bin/CMakeFiles/poly.dir/utils/bspwm.cpp.o
+[ 56%] Building CXX object bin/CMakeFiles/poly.dir/utils/color.cpp.o
+[ 57%] Building CXX object bin/CMakeFiles/poly.dir/utils/command.cpp.o
+[ 58%] Building CXX object bin/CMakeFiles/poly.dir/utils/concurrency.cpp.o
+[ 59%] Building CXX object bin/CMakeFiles/poly.dir/utils/env.cpp.o
+[ 60%] Building CXX object bin/CMakeFiles/poly.dir/utils/factory.cpp.o
+[ 61%] Building CXX object bin/CMakeFiles/poly.dir/utils/file.cpp.o
+[ 62%] Building CXX object bin/CMakeFiles/poly.dir/utils/inotify.cpp.o
+[ 63%] Building CXX object bin/CMakeFiles/poly.dir/utils/io.cpp.o
+[ 64%] Building CXX object bin/CMakeFiles/poly.dir/utils/process.cpp.o
+[ 65%] Building CXX object bin/CMakeFiles/poly.dir/utils/socket.cpp.o
+[ 66%] Building CXX object bin/CMakeFiles/poly.dir/utils/string.cpp.o
+[ 67%] Building CXX object bin/CMakeFiles/poly.dir/utils/units.cpp.o
+[ 68%] Building CXX object bin/CMakeFiles/poly.dir/x11/atoms.cpp.o
+[ 69%] Building CXX object bin/CMakeFiles/poly.dir/x11/connection.cpp.o
+[ 70%] Building CXX object bin/CMakeFiles/poly.dir/x11/background_manager.cpp.o
+[ 71%] Building CXX object bin/CMakeFiles/poly.dir/x11/ewmh.cpp.o
+[ 72%] Building CXX object bin/CMakeFiles/poly.dir/x11/extensions/composite.cpp.o
+[ 73%] Building CXX object bin/CMakeFiles/poly.dir/x11/extensions/randr.cpp.o
+[ 74%] Building CXX object bin/CMakeFiles/poly.dir/x11/icccm.cpp.o
+[ 75%] Building CXX object bin/CMakeFiles/poly.dir/x11/registry.cpp.o
+[ 76%] Building CXX object bin/CMakeFiles/poly.dir/x11/tray_client.cpp.o
+[ 77%] Building CXX object bin/CMakeFiles/poly.dir/x11/tray_manager.cpp.o
+[ 78%] Building CXX object bin/CMakeFiles/poly.dir/x11/window.cpp.o
+[ 79%] Building CXX object bin/CMakeFiles/poly.dir/x11/winspec.cpp.o
+[ 80%] Building CXX object bin/CMakeFiles/poly.dir/x11/xembed.cpp.o
+[ 80%] Building CXX object bin/CMakeFiles/poly.dir/adapters/alsa/control.cpp.o
+[ 81%] Building CXX object bin/CMakeFiles/poly.dir/adapters/alsa/mixer.cpp.o
+[ 82%] Building CXX object bin/CMakeFiles/poly.dir/modules/alsa.cpp.o
+[ 83%] Building CXX object bin/CMakeFiles/poly.dir/modules/github.cpp.o
+[ 84%] Building CXX object bin/CMakeFiles/poly.dir/utils/http.cpp.o
+[ 85%] Building CXX object bin/CMakeFiles/poly.dir/modules/i3.cpp.o
+[ 86%] Building CXX object bin/CMakeFiles/poly.dir/utils/i3.cpp.o
+[ 87%] Building CXX object bin/CMakeFiles/poly.dir/adapters/net.cpp.o
+[ 88%] Building CXX object bin/CMakeFiles/poly.dir/modules/network.cpp.o
+[ 89%] Building CXX object bin/CMakeFiles/poly.dir/adapters/net_nl.cpp.o
+[ 90%] Building CXX object bin/CMakeFiles/poly.dir/adapters/pulseaudio.cpp.o
+[ 91%] Building CXX object bin/CMakeFiles/poly.dir/modules/pulseaudio.cpp.o
+[ 92%] Building CXX object bin/CMakeFiles/poly.dir/x11/cursor.cpp.o
+[ 93%] Building CXX object bin/CMakeFiles/poly.dir/modules/xkeyboard.cpp.o
+[ 94%] Building CXX object bin/CMakeFiles/poly.dir/x11/extensions/xkb.cpp.o
+[ 95%] Building CXX object bin/CMakeFiles/poly.dir/x11/xresources.cpp.o
+[ 96%] Linking CXX static library ../libs/libpoly.a
+[ 96%] Built target poly
+[ 97%] Building CXX object bin/CMakeFiles/polybar.dir/main.cpp.o
+[ 98%] Building CXX object bin/CMakeFiles/polybar-msg.dir/polybar-msg.cpp.o
+[ 99%] Linking CXX executable polybar-msg
+[ 99%] Built target polybar-msg
+[100%] Linking CXX executable polybar
+[100%] Built target polybar
+
+** Execute 'sudo make install'? [Y/n] 
+
+[sudo] password for labia: 
+
+[  5%] Built target xpp
+Consolidate compiler generated dependencies of target i3ipc++
+[  7%] Built target i3ipc++
+Consolidate compiler generated dependencies of target poly
+[ 96%] Built target poly
+Consolidate compiler generated dependencies of target polybar
+[ 98%] Built target polybar
+Consolidate compiler generated dependencies of target polybar-msg
+[100%] Built target polybar-msg
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /etc/polybar/config.ini
+-- Installing: /usr/local/share/bash-completion/completions/polybar
+-- Installing: /usr/local/share/zsh/site-functions/_polybar
+-- Installing: /usr/local/share/zsh/site-functions/_polybar_msg
+-- Installing: /usr/local/bin/polybar
+-- Installing: /usr/local/bin/polybar-msg
+** Build complete!
+
+
 
