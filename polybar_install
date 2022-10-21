@@ -24,7 +24,7 @@ make it could be found
 
 
 
-# install optional jsoncpp and libnl
+# install optional jsoncpp libmpdclient libnl
 
 jsoncpp default to /usr/local/lib64
 
