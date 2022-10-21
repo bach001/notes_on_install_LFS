@@ -1,0 +1,21 @@
+
+# polybar can't find sphinx-build
+
+pip3 install default location to .local 
+
+temporarily do this: export PATH=$PATH:$HOME/.local/bin
+
+
+
+# polybar install script search for xcbgen fail
+
+
+# xcb_proto install xcbgen at: $XORG_PREFIX/lib/python3.10/site-packages/xcbgen
+
+https://www.linuxfromscratch.org/blfs/view/svn/x/xcb-proto.html
+
+
+# set PYTHONPATH=$PYTHONPATH:$$XORG_PREFIX/lib/python3.10/site-packages/
+
+make it could be found
+
