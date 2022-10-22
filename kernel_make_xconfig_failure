@@ -1,0 +1,25 @@
+
+root [ /sources/linux-5.19.2 ]# 
+
+#1 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/Qt/5.15.2/gcc_64/lib/pkgconfig/ 
+
+#2 make xconfig
+
+QAction: no such file or directory
+Obviously, included head files couldn't be found
+
+
+looking into any .pc file under qt install directory /usr/local/Qt/5.15.2/gcc_64/lib/pkgconfig
+
+the prefix is: /home/qt/work/install
+
+apparently it's wrong see https://bugreports.qt.io/browse/QTBUG-80922
+
+
+#3 do a fix
+
+root [ /usr/local/Qt/5.15.2/gcc_64/lib ]# cp -dpr pkgconfig/ pkgconfig.bak
+root [ /usr/local/Qt/5.15.2/gcc_64/lib ]# 
+root [ /usr/local/Qt/5.15.2/gcc_64/lib ]# 
+root [ /usr/local/Qt/5.15.2/gcc_64/lib ]# sed --in-place s+/home/qt/work/install+/usr/local/Qt/5.15.2/gcc_64+ pkgconfig/*.pc
+
