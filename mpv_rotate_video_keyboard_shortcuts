@@ -1,0 +1,8 @@
+
+
+create input.conf with the following content under .config/mpv/
+
+
+r cycle-values video-rotate "90" "180" "270" "0"
+l vf toggle hflip
+
