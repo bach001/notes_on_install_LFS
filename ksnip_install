@@ -1,0 +1,24 @@
+
+
+# install https://github.com/ksnip/kColorPicker/archive/refs/tags/v0.2.0/kColorPicker-0.2.0.tar.gz
+
+
+
+# install kImageAnnotator-0.6.0
+
+https://github.com/ksnip/kImageAnnotator/archive/refs/tags/v0.6.0/kImageAnnotator-0.6.0.tar.gz
+ 
+ 
+mkdir build
+cd build
+cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release ..
+make -j4
+sudo make install
+
+
+
+# intall ksnip
+
+source ../cmake_prefix_path_set.sh
+
+
