@@ -3,6 +3,11 @@
 
 ##1  Add a line in .bashrc: export LIBVA_DRIVER_NAME=i965
 
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+iHD has more codec options than i965, setting LIBVA_DRIVER_NAME is not necessary
+->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+
+
 https://wiki.archlinux.org/title/Hardware_video_acceleration
 
 You can override the driver for VA-API by using the LIBVA_DRIVER_NAME environment variable:
@@ -10,7 +15,7 @@ You can override the driver for VA-API by using the LIBVA_DRIVER_NAME environmen
 Intel graphics:
 
 For libva-intel-driver use i965.
-For intel-media-driver use iHD.
+For intel-media-driver use iHD.  -> this is the default option
 
 
 
@@ -39,6 +44,11 @@ media.navigator.mediadatadecoder_vpx_enabled to true.
 Enables hardware decoding for WebRTC, which is used on web based video conferencing apps.
 
 
+
+If necessary, Hardware WebRender can be force enabled by setting gfx.webrender.all to true.
+
+
+
 #22 run firefox like this MOZ_ENABLE_WAYLAND=1 firefox
 
 https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
@@ -46,13 +56,19 @@ https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
 More recent versions of Firefox support opting into Wayland mode via an environment variable.
  
 
-##3 console logs and intel_gpu_top show it works
+##3 vainfo info and intel_gpu_top show it works
 
 libva info: VA-API version 1.15.0
 libva info: User environment variable requested driver 'i965'
 libva info: Trying to open /usr/X11/lib/dri/i965_drv_video.so
 libva info: Found init function __vaDriverInit_1_15
 libva info: va_openDriver() returns 0
+
+or
+
+vainfo: VA-API version: 1.16 (libva 2.15.0)
+vainfo: Driver version: Intel iHD driver for Intel(R) Gen Graphics - 22.4.4 ()
+vainfo: Supported profile and entrypoints
 
 
 intel-gpu-top: Intel Kabylake (Gen9) @ /dev/dri/card0 -   83/  84 MHz;  89% RC6;  0.07/ 1.57 W
