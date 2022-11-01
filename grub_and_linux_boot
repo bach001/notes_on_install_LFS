@@ -2,6 +2,34 @@
 # firmware history from MBR to UEFI
 
 
+
+The firmware is the very first program that is executed once the system is switched on.
+
+Tip: The words BIOS and (U)EFI are often used instead of firmware
+
+
+
+
+UEFI
+
+The Unified Extensible Firmware Interface has support for 
+reading both the partition table as well as file systems. 
+UEFI does not launch any boot code from the Master Boot Record (MBR) whether it exists or not, 
+instead booting relies on boot entries in the NVRAM.
+
+The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems 
+(see UEFI specification version 2.9, section 13.3.1.1), 
+but any conformant vendor can optionally add support for additional file systems; 
+for example, HFS+ or APFS in some Apple's firmwares. 
+UEFI implementations also support ISO-9660 for optical discs.
+
+UEFI launches EFI applications, e.g. boot loaders, boot managers, UEFI shell, etc. 
+These applications are usually stored as files in the EFI system partition. 
+
+
+
+
+
 # understanding [U]EFI GRUB boot loader boot process
 
 ## this one is a good explanation of 2 stages loading
@@ -13,9 +41,46 @@ https://wiki.archlinux.org/title/Arch_boot_process#Boot_loader
 https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface
 
 
-
-
 # something to know about efivars
+
+
+UEFI defines variables through which an operating system can interact with the firmware. 
+UEFI boot variables are used by the boot loader and used by the OS only 
+for early system start-up. UEFI runtime variables allow an OS to manage certain settings 
+of the firmware like the UEFI boot manager or managing the keys for UEFI Secure Boot 
+protocol etc. You can get the list using:
+
+$ efivar --list
+
+Linux kernel exposes UEFI variables data to userspace via efivarfs
+
+
+
+
+
+# initramfs
+
+The root file system at / starts out as an empty rootfs, which is a special instance of 
+ramfs or tmpfs. This is the temporary root file system where the initramfs (initial RAM 
+file system) images will be unpacked to.
+
+The purpose of the initramfs is to bootstrap the system to the point where it can access 
+the root file system (see FHS for details). It does not need to contain every module 
+one would ever want to use; it should only have modules required for the root device 
+like IDE, SCSI, SATA or USB/FW (if booting from an external drive) and encryption. 
+The majority of modules will be loaded later on by udev, during the init process.
+
+First, the kernel unpacks its builtin initramfs into the temporary root. Arch Linux's 
+official kernels use an empty archive for the builtin initramfs, which is the default 
+when building Linux. Then, the kernel unpacks external initramfs files specified by 
+the command line passed by the boot loader, overwriting any files from the embedded 
+initramfs. These external initramfs images can be generated with mkinitcpio, dracut 
+or booster, and are Arch's preferred method for setting up for early userspace. 
+
+
+
+
+
 
 
 # delete uefi boot entry
@@ -31,6 +96,9 @@ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ARCH
 
 GRUB2: error: disk `(hd0,)' not found
 
+
+
+# read this -> https://wiki.archlinux.org/title/GRUB #4.3 section  -> Using the rescue console
 
 
 
