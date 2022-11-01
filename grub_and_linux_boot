@@ -1,0 +1,51 @@
+
+# firmware history from MBR to UEFI
+
+
+# understanding [U]EFI GRUB boot loader boot process
+
+## this one is a good explanation of 2 stages loading
+https://en.wikipedia.org/wiki/GNU_GRUB
+
+## other worth reading material
+https://wiki.archlinux.org/title/GRUB
+https://wiki.archlinux.org/title/Arch_boot_process#Boot_loader
+https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface
+
+
+
+
+# something to know about efivars
+
+
+# delete uefi boot entry
+efibootmgr -b 0 -B
+
+# add uefi boot entry
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ARCH
+
+
+
+
+# removable disk may cause internal hard disk to get a new order number
+
+GRUB2: error: disk `(hd0,)' not found
+
+
+
+
+# creating Gparted bootable usb failure, maybe it's because Gparted iso's problem
+
+https://wiki.archlinux.org/title/USB_flash_installation_medium#Using_the_ISO_as_is_(BIOS_and_UEFI)
+
+
+# using ventoy to drag iso
+
+
+
+// not important
+
+https://serverfault.com/questions/857255/what-is-grub-install-actually-doing
+
+
+
