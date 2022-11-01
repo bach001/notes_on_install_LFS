@@ -36,10 +36,13 @@ GRUB2: error: disk `(hd0,)' not found
 
 # creating Gparted bootable usb failure, maybe it's because Gparted iso's problem
 
+bootable usb created by using Unetbootin seems can't be recognized by UEFI only machine
+
 https://wiki.archlinux.org/title/USB_flash_installation_medium#Using_the_ISO_as_is_(BIOS_and_UEFI)
 
+# using ventoy to boot iso
 
-# using ventoy to drag iso
+
 
 
 
