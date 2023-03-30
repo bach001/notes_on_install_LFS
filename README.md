@@ -1,4 +1,5 @@
 # lfs_install_log
 
+logs on resovling various issues when installing LFS
 
-Recording logs when installing linux from scratch
+LFS https://www.linuxfromscratch.org/lfs/
