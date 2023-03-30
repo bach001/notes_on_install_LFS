@@ -9,7 +9,7 @@ Actually setting up a system from scratch is really time-consuming
 
 There are tons of issues to be fixed
 
-It took me weeks to finished the building
+It took me weeks to finish the building
 
 And as the base system was brought up, still there are software installations issues to be fixed
 
